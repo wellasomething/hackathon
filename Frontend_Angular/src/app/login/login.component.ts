@@ -45,7 +45,7 @@ export class LoginComponent {
           // Handle successful authentication here
           if (response.success) {
             // Navigate to welcome page if authentication was successful
-            this.router.navigate(['/success-login']);
+            this.router.navigate(['/dashboard']);
           } else {
             this.loginError = true;
           }
