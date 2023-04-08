@@ -7,22 +7,22 @@
         <img src="../../assets/gtLogo.png" alt="Logo" />
         <h1 class="login">Login</h1>
       </header>
-      <form [formGroup]="myForm" class="example-form">
-        <mat-form-field class="example-full-width">
+      <form class="example-form">
+        <mat-form-field class="example-full-width input1 ">
           <mat-label>Email</mat-label>
           <input
+          #input_email
             matInput
             type="email"
-            formControlName="email"
        />
         </mat-form-field>
   
         <mat-form-field class="example-full-width">
           <mat-label>Password</mat-label>
           <input
+          #input_password
             matInput
             type="password"
-            formControlName="password"
             placeholder="Enter your password"
           />
           <button

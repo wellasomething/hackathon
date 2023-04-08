@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -11,16 +10,15 @@ import { CreateGoalPageComponent } from './create-goal-page/create-goal-page.com
 import { SuccessPageComponent } from './success-page/success-page.component';
 import { SavingsTrackerComponent } from './savings-tracker/savings-tracker.component';
 import { CreateTargetComponent } from './create-target/create-target.component';
-//import {MatFormFieldModule} from '@angular/material/form-field';
-//import {MatInputModule} from '@angular/material/input';
-//import {MatButtonModule} from '@angular/material/button';
-//import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {MatButtonModule} from '@angular/material/button';
+import {MatToolbarModule} from '@angular/material/toolbar';
 import { HttpClientModule } from '@angular/common/http';
-import { TargetComponent } from './target/target.component'
-  // MatFormFieldModule, 
-    // MatInputModule,
-    // MatButtonModule,
-    // MatToolbarModule,
+import { MatIconModule } from '@angular/material/icon';
+import { FormsModule } from '@angular/forms';
+import { FlexLayoutModule } from '@angular/flex-layout';
+
 
 @NgModule({
   declarations: [
@@ -32,14 +30,20 @@ import { TargetComponent } from './target/target.component'
     SuccessPageComponent,
     SavingsTrackerComponent,
     CreateTargetComponent,
-    TargetComponent
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    HttpClientModule
-    
+    HttpClientModule,
+    MatIconModule,
+    MatFormFieldModule, 
+    MatInputModule,
+    MatButtonModule,
+    MatToolbarModule,
+    FormsModule,
+    FlexLayoutModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

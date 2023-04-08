@@ -1,6 +1,6 @@
-<!-- app.component.html -->
+
 <header>
-    <img src="path/to/logo.png" alt="Logo" class="logo">
+    <img src="../../assets/gtLogo.png" alt="Logo" class="logo">
   </header>
   <main>
     <div class="container">
@@ -8,28 +8,29 @@
       <form (ngSubmit)="onSubmit()">
         <div class="form-group">
           <label for="percentage">Percentage</label>
-          <select class="form-control" id="percentage" name="percentage" [(ngModel)]="selectedPercentage">
+          <select class="form-control" id="percentage" name="percentage">
             <option *ngFor="let percentage of percentages" [value]="percentage">{{ percentage }}%</option>
           </select>
         </div>
         <div class="form-group">
           <label for="frequency">Frequency</label>
-          <select class="form-control" id="frequency" name="frequency" [(ngModel)]="selectedFrequency">
+          <select class="form-control" id="frequency" name="frequency" >
             <option *ngFor="let frequency of frequencies" [value]="frequency">{{ frequency }}</option>
           </select>
         </div>
         <div class="form-group">
           <label for="startDate">Start Date</label>
-          <input type="date" class="form-control" id="startDate" name="startDate" [(ngModel)]="startDate">
+          <input type="date" class="form-control" id="startDate" name="startDate" >
         </div>
         <div class="form-group">
           <label for="endDate">End Date</label>
-          <input type="date" class="form-control" id="endDate" name="endDate" [(ngModel)]="endDate">
+          <input type="date" class="form-control" id="endDate" name="endDate">
+        
         </div>
         <div class="form-group form-check">
-          <input type="checkbox" class="form-check-input" id="termsAndConditions" name="termsAndConditions" [(ngModel)]="termsAndConditions">
-          <label class="form-check-label" for="termsAndConditions">I agree to the terms and conditions</label>
-        </div>
+            <input type="checkbox" class="form-check-input" id="termsAndConditions" name="termsAndConditions" [checked]="termsAndConditions" (change)="termsAndConditions = !termsAndConditions">
+            <label class="form-check-label" for="termsAndConditions">I agree to the terms and conditions</label>
+             </div>
         <button type="submit" class="btn btn-primary" [disabled]="!termsAndConditions">Submit</button>
       </form>
     </div>
