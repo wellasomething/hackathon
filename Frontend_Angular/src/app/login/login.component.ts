@@ -32,7 +32,7 @@ export class LoginComponent {
 
   onSubmit() {
     const data = {
-      username: this.red.selectRootElement(this.input_email['nativeElement'])
+      email: this.red.selectRootElement(this.input_email['nativeElement'])
         .value,
       password: this.red.selectRootElement(this.input_password['nativeElement'])
         .value,
