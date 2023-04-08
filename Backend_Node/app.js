@@ -114,5 +114,5 @@ const endDate = new Date('2023-04-20');
 
 const port = 3000
 app.listen(port, () => {
-  console.log('Server started on port 7200');
+  console.log('Server started on port 3000');
 });
