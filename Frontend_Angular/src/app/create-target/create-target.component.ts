@@ -13,11 +13,9 @@ export class CreateTargetComponent {
   termsAndConditions: boolean = false;
   percentages: number[] = [10, 20, 30, 40, 50];
   frequencies: string[] = [
-    'Weekly',
-    'Biweekly',
+    'daily',
+    'weekly',
     'Monthly',
-    'Quarterly',
-    'Yearly',
   ];
 
   onSubmit() {}
