@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-<<<<<<< HEAD
+// <<<<<<< HEAD
 import { SuccessPageComponent } from './success-page/success-page.component';
 import { SavingsPageComponent } from './savings-page/savings-page.component';
 import { SavingsTrackerComponent } from './savings-tracker/savings-tracker.component';
@@ -17,13 +17,13 @@ const routes: Routes = [
   {path: 'savingsTracker', component:SavingsTrackerComponent},
   {path: 'createGoal', component:CreateGoalPageComponent},
   {path: 'createTarget', component:CreateTargetComponent}
-=======
-
-const routes: Routes = [
-  {path: 'login', component:LoginComponent},
-  {path: 'dashboard', component:DashboardComponent},
->>>>>>> 9cc1ddb2895a342f43320ee3aca7a8149e34a182
 ];
+
+// const routes: Routes = [
+//   {path: 'login', component:LoginComponent},
+//   {path: 'dashboard', component:DashboardComponent},
+// >>>>>>> 9cc1ddb2895a342f43320ee3aca7a8149e34a182
+// ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
