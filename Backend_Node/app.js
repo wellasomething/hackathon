@@ -85,30 +85,50 @@ app.post('/accomodation', (req, res)=>{
   res.send({amountSaved});
 
   //deduction percentage chosen every 24hrs
-  function frequency(){
+  // function frequency(){
 
-    const toBeDeducted = amountSaved;
+  //   const toBeDeducted = amountSaved;
     
-  // Log the deduction result
-  console.log(`Deducted ${toBeDeducted} from ${totalBalance}.`);
-  return toBeDeducted;
-  };
+  // // Log the deduction result
+  // console.log(`Deducted ${toBeDeducted} from ${totalBalance}.`);
+  // return toBeDeducted;
+  // };
+
+  // Set start date and end date for the event
+const startDate = new Date('2023-04-10'); // Example start date: April 10, 2023
+const endDate = new Date('2023-04-20');
 
 function scheduleDeduction() {
+
+  // Get current date
+  const currentDate = new Date();
+
+  // Check if current date is within the range of start date and end date
+  if (currentDate >= startDate && currentDate <= endDate) {
+
+    // Perform deduction logic here
+    const toBeDeducted = amountSaved;
+
+    // Log the deduction result
+    console.log(`Deducted ${toBeDeducted} on ${currentDate.toDateString()}`);
+
   const daily = 24 * 60 * 60 * 1000;
   const weekly = 7 * 60 * 60 * 24 * 1000;
   const monthly = 4 * 7 * 60 * 60 * 24 * 1000;
   setTimeout(() => {
-    frequency();
+    // frequency();
     scheduleDeduction(); // Schedule the next run after 24 hours
   }, daily, weekly, monthly);
-}
+  }
+  else{
+    console.log('Event has ended.');
+
+  }
+};
 scheduleDeduction();
 
 
-// Set start date and end date for the event
-const startDate = new Date('2023-04-10'); // Example start date: April 10, 2023
-const endDate = new Date('2023-04-20');
+
 
 });
 
