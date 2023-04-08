@@ -27,9 +27,7 @@ app.post("/", (req, res) => {
 
 
 
-app.listen(3000, () =>{
-  console.log('server is running on port 3000')
-})
+
 
 // const express = require('express');
 // const bodyParser = require('body-parser');
@@ -114,7 +112,7 @@ const endDate = new Date('2023-04-20');
 
 });
 
-const port = 7200
+const port = 3000
 app.listen(port, () => {
   console.log('Server started on port 7200');
 });
