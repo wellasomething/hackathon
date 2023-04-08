@@ -1,52 +1,59 @@
 <body>
-    <div *ngIf="loginError">
-      <p>An error occurred while logging in. Please try again later.</p>
-    </div>
-    <div class="card">
-      <header class="login-cont">
-        <img src="../../assets/gtLogo.png" alt="Logo" />
-        <h1 class="login">Login</h1>
-      </header>
-      <form class="example-form" (ngSubmit)="onSubmit()">
-        <mat-form-field class="example-full-width input1 ">
-          <mat-label>Email</mat-label>
-          <input
-          #input_email
-            matInput
-            type="email"
-       />
-        </mat-form-field>
-  
-        <mat-form-field class="example-full-width">
-          <mat-label>Password</mat-label>
-          <input
-          #input_password
-            matInput
-            type="password"
-            placeholder="Enter your password"
-          />
+  <mat-card>
+    <mat-card-content>
+
+      <div *ngIf="loginError">
+        <p>An error occurred while logging in. Please try again later.</p>
+      </div>
+      <div class="card">
+        <header class="login-cont">
+          <img src="../../assets/gtLogo.png" alt="Logo" />
+          <h1 class="login">Login</h1>
+        </header>
+        <form class="example-form" (ngSubmit)="onSubmit()">
+          <mat-form-field class="example-full-width input1 ">
+            <mat-label>Email</mat-label>
+            <input
+            #input_email
+              matInput
+              type="email"
+         />
+          </mat-form-field>
+    
+          <mat-form-field class="example-full-width">
+            <mat-label>Password</mat-label>
+            <input
+            #input_password
+              matInput
+              type="password"
+              placeholder="Enter your password"
+            />
+            <button
+              mat-icon-button
+              matSuffix
+              aria-label="Toggle password visibility"
+              (click)="hidePassword = !hidePassword"
+            >
+              <mat-icon>
+                {{ hidePassword ? 'visibility_off' : 'visibility' }}
+              </mat-icon>
+            </button>
+          </mat-form-field>
+          <a href="/forgot-password">Forgot password?</a>
+          <p class="error-message" *ngIf="loginError">
+            Invalid email or password!
+          </p>
           <button
-            mat-icon-button
-            matSuffix
-            aria-label="Toggle password visibility"
-            (click)="hidePassword = !hidePassword"
+            style="background: #ff3c00; color: white; margin-top: 1rem"
+            mat-raised-button
           >
-            <mat-icon>
-              {{ hidePassword ? 'visibility_off' : 'visibility' }}
-            </mat-icon>
+            Login
           </button>
-        </mat-form-field>
-        <a href="/forgot-password">Forgot password?</a>
-        <p class="error-message" *ngIf="loginError">
-          Invalid email or password!
-        </p>
-        <button
-          style="background: #ff3c00; color: white; margin-top: 1rem"
-          mat-raised-button
-        >
-          Login
-        </button>
-      </form>
-    </div>
+        </form>
+      </div>
+    </mat-card-content>
+    
+  </mat-card>
+    
   </body>
   

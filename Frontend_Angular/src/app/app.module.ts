@@ -18,6 +18,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { MatCardModule } from '@angular/material/card'
 
 
 
@@ -44,6 +45,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatInputModule,
     MatButtonModule,
     MatToolbarModule,
+    MatCardModule,
     FormsModule,
     FlexLayoutModule,
     
