@@ -1,0 +1,22 @@
+/* styles.css */
+header {
+    display: flex;
+    justify-content: flex-end;
+    padding: 1rem;
+  }
+  
+  .logo {
+    height: 50px;
+    width: auto;
+  }
+  
+  .container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 1rem;
+  }
+  
+  .text-center {
+    text-align: center;
+  }
+  

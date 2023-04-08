@@ -15,7 +15,8 @@ import { CreateTargetComponent } from './create-target/create-target.component';
 //import {MatInputModule} from '@angular/material/input';
 //import {MatButtonModule} from '@angular/material/button';
 //import {MatToolbarModule} from '@angular/material/toolbar';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http';
+import { TargetComponent } from './target/target.component'
   // MatFormFieldModule, 
     // MatInputModule,
     // MatButtonModule,
@@ -30,7 +31,8 @@ import { HttpClientModule } from '@angular/common/http'
     CreateGoalPageComponent,
     SuccessPageComponent,
     SavingsTrackerComponent,
-    CreateTargetComponent
+    CreateTargetComponent,
+    TargetComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,31 @@
+/* styles.css */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+  }
+  
+  .logo {
+    height: 50px;
+    width: auto;
+  }
+  
+  .menu {
+    display: flex;
+    gap: 1rem;
+    list-style: none;
+  }
+  
+  button {
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    background-color: #eee;
+    border: none;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #ddd;
+  }
+  
