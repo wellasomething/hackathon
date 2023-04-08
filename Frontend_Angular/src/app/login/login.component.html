@@ -1,1 +1,52 @@
-<p>login works!</p>
+<body>
+    <div *ngIf="loginError">
+      <p>An error occurred while logging in. Please try again later.</p>
+    </div>
+    <div class="card">
+      <header class="login-cont">
+        <img src="../../assets/gtLogo.png" alt="Logo" />
+        <h1 class="login">Login</h1>
+      </header>
+      <form [formGroup]="myForm" class="example-form">
+        <mat-form-field class="example-full-width">
+          <mat-label>Email</mat-label>
+          <input
+            matInput
+            type="email"
+            formControlName="email"
+       />
+        </mat-form-field>
+  
+        <mat-form-field class="example-full-width">
+          <mat-label>Password</mat-label>
+          <input
+            matInput
+            type="password"
+            formControlName="password"
+            placeholder="Enter your password"
+          />
+          <button
+            mat-icon-button
+            matSuffix
+            aria-label="Toggle password visibility"
+            (click)="hidePassword = !hidePassword"
+          >
+            <mat-icon>
+              {{ hidePassword ? 'visibility_off' : 'visibility' }}
+            </mat-icon>
+          </button>
+        </mat-form-field>
+        <a href="/forgot-password">Forgot password?</a>
+        <p class="error-message" *ngIf="loginError">
+          Invalid email or password!
+        </p>
+        <button
+          style="background: #ff8a00; color: white; margin-top: 1rem"
+          mat-raised-button
+        >
+          Login
+        </button>
+      </form>
+    </div>
+  </body>
+  
