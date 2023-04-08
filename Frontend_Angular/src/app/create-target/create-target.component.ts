@@ -7,4 +7,15 @@ import { Component } from '@angular/core';
 })
 export class CreateTargetComponent {
 
+  selectedPercentage: number = 0;
+  selectedFrequency: string = '';
+  startDate: string  ="";
+  endDate: string = '';
+  termsAndConditions: boolean = false;
+  percentages: number[] = [10, 20, 30, 40, 50];
+  frequencies: string[] = ['Weekly', 'Biweekly', 'Monthly', 'Quarterly', 'Yearly'];
+
+  onSubmit() {
+  }
+
 }
