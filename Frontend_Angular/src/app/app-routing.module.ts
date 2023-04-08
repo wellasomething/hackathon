@@ -6,7 +6,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { SuccessPageComponent } from './success-page/success-page.component';
 import { SavingsPageComponent } from './savings-page/savings-page.component';
 import { SavingsTrackerComponent } from './savings-tracker/savings-tracker.component';
-import { CreateGoalPageComponent } from './create-goal-page/create-goal-page.component';
+
 import { CreateTargetComponent } from './create-target/create-target.component';
 
 const routes: Routes = [
@@ -15,7 +15,7 @@ const routes: Routes = [
   {path: 'savingsPage', component:SavingsPageComponent},
   {path: 'success', component:SuccessPageComponent},
   {path: 'savingsTracker', component:SavingsTrackerComponent},
-  {path: 'createGoal', component:CreateGoalPageComponent},
+
   {path: 'createTarget', component:CreateTargetComponent}
 ];
 
