@@ -6,24 +6,21 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { SuccessPageComponent } from './success-page/success-page.component';
 import { SavingsPageComponent } from './savings-page/savings-page.component';
 import { SavingsTrackerComponent } from './savings-tracker/savings-tracker.component';
+import { } from './create-savings-goal/create-savings-goal.component'
 
 import { CreateTargetComponent } from './create-target/create-target.component';
 
 const routes: Routes = [
   {path: '', component:LoginComponent},
   {path: 'dashboard', component:DashboardComponent},
-  {path: 'savingsPage', component:SavingsPageComponent},
+  {path: 'savings', component:SavingsPageComponent},
   {path: 'success', component:SuccessPageComponent},
   {path: 'savingsTracker', component:SavingsTrackerComponent},
-
-  {path: 'createTarget', component:CreateTargetComponent}
+  {path: 'create-goal', component:CreateTargetComponent},
+  {path: 'create-target', component:CreateTargetComponent}
 ];
 
-// const routes: Routes = [
-//   {path: 'login', component:LoginComponent},
-//   {path: 'dashboard', component:DashboardComponent},
-// >>>>>>> 9cc1ddb2895a342f43320ee3aca7a8149e34a182
-// ];
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
