@@ -1,11 +1,21 @@
-<mat-card>
-    
-        <button (click)="onCreateSavingsClick()" >Create a Savings Goal</button>
-   
-</mat-card>
+<div>
+    <nav> 
+        <mat-icon  (click)="onClick()">arrow_back</mat-icon>
+        <p >Manage your Savings</p>
+    </nav>
 
-<mat-card>
+    <div class="content">
+        <mat-card>
     
-        <button (click)="onCreateButtonClick()">Track savings goal</button>
+            <button (click)="onCreateSavingsClick()" >Create a Savings Goal</button>
+       
+    </mat-card>
     
-</mat-card>
+    <mat-card>
+        
+            <button (click)="onCreateButtonClick()">Track savings goal</button>
+        
+    </mat-card>
+    </div>
+    
+</div>

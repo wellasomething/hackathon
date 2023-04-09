@@ -34,4 +34,8 @@ export class CreateSavingsGoalComponent {
       this.router.navigate(['/create-target']);
     }, 1000); //1 seconds timeout
   }
+
+  onClick(){
+    this.router.navigate(['/manage-savings'])
+  }
 }

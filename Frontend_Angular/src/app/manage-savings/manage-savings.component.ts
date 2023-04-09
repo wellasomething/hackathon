@@ -22,4 +22,8 @@ export class ManageSavingsComponent {
     }, 1000) //1 seconds timeout
     
   }
+
+  onClick(){
+    this.router.navigate(['/dashboard'])
+  }
 }

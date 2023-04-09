@@ -12,6 +12,9 @@ export class DashboardComponent {
   constructor(private router: Router, private http: HttpClient) { }
 
   onClick(){
-    this.router.navigate(['/manage-savings'])
+    setTimeout(()=>{
+      this.router.navigate(['/manage-savings'])
+    }, 1000) //timeout for 1second
+    
   }
 }

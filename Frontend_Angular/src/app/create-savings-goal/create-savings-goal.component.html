@@ -1,26 +1,33 @@
-<header>
-    <img src="../../assets/gtLogo.png" alt="Logo" class="logo">
+<nav> 
+    <mat-icon  (click)="onClick()">arrow_back</mat-icon>
+    <p >Start your savings</p>
+    <header style="float: right;">
+        <img src="../../assets/gtLogo.png" alt="Logo" class="logo">
+        
+    </header>
+</nav>
+
+<div class="content">
+    <mat-card>
     
-</header>
-<mat-card>
+        <button (click)="onAccomodation()">Accomodation</button>
     
-    <button (click)="onAccomodation()">Accomodation</button>
-
-</mat-card>
-
-<mat-card>
-
-    <button (click)="onBusiness()">Business</button>
-
-</mat-card>
-<mat-card>
+    </mat-card>
     
-    <button (click)="onEmergency()">Emergency</button>
-
-</mat-card>
-
-<mat-card>
-
-    <button (click)="onOthers()">Others</button>
-
-</mat-card>
+    <mat-card>
+    
+        <button (click)="onBusiness()">Business</button>
+    
+    </mat-card>
+    <mat-card>
+        
+        <button (click)="onEmergency()">Emergency</button>
+    
+    </mat-card>
+    
+    <mat-card>
+    
+        <button (click)="onOthers()">Others</button>
+    
+    </mat-card>
+</div>

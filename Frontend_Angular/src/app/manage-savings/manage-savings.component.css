@@ -24,6 +24,17 @@
     margin: 2em auto;
     width: 80%;
 }
+.content{
+  margin-top: 40px;
+}
+
+p{
+  text-align: center;
+   font-size: 16px; 
+   font-weight: 700; 
+   margin: 0;
+   padding: 0;
+}
 button{
     background-color: white;
     border-color:white;
@@ -36,6 +47,15 @@ button:hover{
     background-color: #ff3c00;
     color: white;
     border-color: #ff3c00;
+}
+nav{
+  background-color: #ff3c00;
+  color: white;
+}
+mat-icon{
+  color: white;
+  cursor: pointer;
+  font-size: 20px;
 }
 }
 
