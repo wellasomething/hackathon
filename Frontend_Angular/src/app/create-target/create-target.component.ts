@@ -47,4 +47,8 @@ export class CreateTargetComponent {
         }
       );
   }
+
+  onClick(){
+    this.router.navigate(['/create-savings'])
+  }
 }
