@@ -26,11 +26,17 @@ app.post("/", (req, res) => {
 
 });
 
+// Define a route that sends the value to the frontend
+app.get('/create-savings', (req, res) => {
+  const totalBalance = '100,000.00'; // Update this value with the value you want to send
+  res.json({ value: totalBalance });
+});
+
 
 //calculating the total amount saved by a user
-app.post('/accomodation', (req, res)=>{
+app.post('/create-target', (req, res)=>{
   const inputValue = req.body.inputValue;
-  const totalBalance = req.body.balance;
+  
 
   //performing percentage computation
   const amountSaved = (inputValue/100) * totalBalance;

@@ -50,7 +50,7 @@ header {
 
 
     }
-    p{
+    .nav-content{
         text-align: center;
          font-size: 16px; 
          font-weight: 700; 
@@ -63,6 +63,19 @@ header {
       }
       .content{
         margin-top: 40px;
+      }
+
+      span{
+        font-size: 30px;
+       position: relative;
+       left: 30px;
+       top: 20px;
+
+      }
+      p{
+        position: relative;
+        left: 35px;
+        top: 30px;
       }
    }
    

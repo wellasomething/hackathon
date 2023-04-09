@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 
@@ -7,8 +7,16 @@ import { Router } from '@angular/router';
   templateUrl: './create-savings-goal.component.html',
   styleUrls: ['./create-savings-goal.component.css']
 })
-export class CreateSavingsGoalComponent {
+export class CreateSavingsGoalComponent implements OnInit {
+  totalBalance: string | undefined; // Variable to store the value from backend
   constructor(private router: Router, private http: HttpClient) { }
+
+  ngOnInit() {
+    // Fetch data from backend
+    this.http.get('//localhost:3000/create-savings').subscribe((data: any) => {
+      this.totalBalance = data.value; // Update the value in the component
+    });
+  }
 
   onAccomodation(){
     setTimeout(()=>{
