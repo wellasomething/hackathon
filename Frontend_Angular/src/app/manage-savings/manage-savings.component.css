@@ -22,6 +22,16 @@
 
   mat-card{
     margin: 2em auto;
+    width: 80%;
+}
+button{
+    background-color: white;
+    border-color:white;
+   
+}
+button:hover{
+    background-color: #ff3c00;
+    color: white;
 }
 }
 
