@@ -16,7 +16,7 @@ const routes: Routes = [
   {path: 'dashboard', component:DashboardComponent},
   {path: 'savings', component:SavingsPageComponent},
   {path: 'success', component:SuccessPageComponent},
-  {path: 'savingsTracker', component:SavingsTrackerComponent},
+  {path: 'savings-tracker', component:SavingsTrackerComponent},
   {path: 'create-goal', component:CreateTargetComponent},
   {path: 'create-target', component:CreateTargetComponent},
   {path: 'manage-savings', component:ManageSavingsComponent},
