@@ -5,6 +5,16 @@
     align-items: center;
     flex-direction: column;
   }
+  /* mat-card{
+    max-width: 600px;
+    margin: 2em auto;
+    text-align: center;
+    max-height: 300px;
+    
+    
+    
+} */
+
   header {
     display: flex;
     justify-content: center;
@@ -52,11 +62,15 @@
       background-size: cover;
       height:100vh;
     }
+    img{
+      margin-bottom: 20px;
+    }
     .card{
       width:90%;
       margin-inline: auto;
       height: auto;
-      padding-block-start: 23rem;
+      padding-block-start: 2rem;
+      margin-top: 120px;
       
     }
     .example-form{

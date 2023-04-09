@@ -1,5 +1,5 @@
 @media only screen and (max-width: 540px) {
-  .content {
+  /* .content {
     background-color: #e66935;
     display: flex;
     padding-block: 0.5rem;
@@ -18,5 +18,10 @@
   .create {
     background-color: #e66935;
     color: white;
-  }
+  } */
+
+  mat-card{
+    margin: 2em auto;
 }
+}
+
