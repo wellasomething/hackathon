@@ -13,25 +13,25 @@ export class CreateSavingsGoalComponent {
   onAccomodation(){
     setTimeout(()=>{
       this.router.navigate(['/create-target']);
-    }, 3000); //10 seconds timeout
+    }, 1000); //1 seconds timeout
     
   }
 
   onBusiness(){
     setTimeout(()=>{
       this.router.navigate(['/create-target']);
-    }, 3000); //10 seconds timeout
+    }, 1000); //1 seconds timeout
   }
 
   onEmergency(){
     setTimeout(()=>{
       this.router.navigate(['/create-target']);
-    }, 3000); //10 seconds timeout
+    }, 1000); //1 seconds timeout
   }
 
   onOthers(){
     setTimeout(()=>{
       this.router.navigate(['/create-target']);
-    }, 3000); //10 seconds timeout
+    }, 1000); //1 seconds timeout
   }
 }

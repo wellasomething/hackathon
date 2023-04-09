@@ -13,13 +13,13 @@ export class ManageSavingsComponent {
   onCreateSavingsClick(){
     setTimeout(()=>{
       this.router.navigate(['/create-savings']);
-    }, 3000) // 3 seconds timeout
+    }, 1000) // 1 seconds timeout
     
   }
   onCreateButtonClick(){
     setTimeout(()=>{
       this.router.navigate(['/savings-tracker']);
-    }, 3000) //3 seconds timeout
+    }, 1000) //1 seconds timeout
     
   }
 }
