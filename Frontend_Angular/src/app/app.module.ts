@@ -19,7 +19,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatCardModule } from '@angular/material/card';
-import { CreateSavingsGoalComponent } from './create-savings-goal/create-savings-goal.component'
+import { CreateSavingsGoalComponent } from './create-savings-goal/create-savings-goal.component';
+import { ManageSavingsComponent } from './manage-savings/manage-savings.component'
 
 
 
@@ -35,6 +36,7 @@ import { CreateSavingsGoalComponent } from './create-savings-goal/create-savings
     SavingsTrackerComponent,
     CreateTargetComponent,
     CreateSavingsGoalComponent,
+    ManageSavingsComponent,
 
   ],
   imports: [

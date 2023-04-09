@@ -1,0 +1,22 @@
+@media only screen and (max-width: 540px) {
+  .content {
+    background-color: #e66935;
+    display: flex;
+    padding-block: 0.5rem;
+  }
+  .cards {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  p {
+    padding-inline: 1rem;
+    width: 100%;
+    margin-inline: 0.5rem;
+  }
+  .create {
+    background-color: #e66935;
+    color: white;
+  }
+}
