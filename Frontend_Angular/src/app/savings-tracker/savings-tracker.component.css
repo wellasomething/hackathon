@@ -19,6 +19,15 @@ header {
     text-align: center;
   }
   @media only screen and (max-width: 540px){
+
+    .TargetBalance{display: flex;
+    }
+
+    .ImgText{
+        display: flex;
+        gap: 2rem;
+        padding: 1rem;
+    }
     nav{
       background-color: #ff3c00;
       color: white;
@@ -32,5 +41,8 @@ header {
        font-weight: 700; 
        font-size: 1.2rem;
        margin-bottom: 0;
+    }
+    h3{
+        text-align: center;
     }
   }
