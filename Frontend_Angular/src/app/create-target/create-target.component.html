@@ -14,7 +14,9 @@
           <select (change)="onOptionSelected($event)" class="form-control" id="percentage" name="percentage">
             <option *ngFor="let percentage of percentages" [value]="percentage">{{ percentage }}%</option>
           </select>
-          <div>{{ amountSaved }}</div>
+          
+          <div>&#8358;{{ amountSaved }}</div>
+
 
 
           

@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./create-savings-goal.component.css']
 })
 export class CreateSavingsGoalComponent implements OnInit {
-  totalBalance: string | undefined; // Variable to store the value from backend
+  totalBalance: number | undefined; // Variable to store the value from backend
   constructor(private router: Router, private http: HttpClient) { }
 
   ngOnInit() {

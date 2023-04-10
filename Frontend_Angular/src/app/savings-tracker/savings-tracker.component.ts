@@ -7,7 +7,7 @@ import { Router } from '@angular/router'; // Import Router module
   styleUrls: ['./savings-tracker.component.css']
 })
 export class SavingsTrackerComponent {
-  router: any;
+  constructor(private router: Router, private http: HttpClient) { }
   onClick(){
     this.router.navigate(['/manage-savings'])
   }

@@ -13,7 +13,7 @@ export class CreateTargetComponent implements OnInit {
   startDate: Date = new Date();
   endDate: Date = new Date();
   termsAndConditions: boolean = false;
-  percentages: number[] = [10, 20, 30, 40, 50];
+  percentages: number[] = [0,10, 20, 30, 40, 50];
   frequencies: string[] = [
     'Daily',
     'Weekly',
@@ -65,47 +65,23 @@ export class CreateTargetComponent implements OnInit {
   }
   
   onOptionSelected(event: any) {
-    // Call the function to fetch data from backend
+    // Get the selected percentage from the event object and parse it as a number
+    this.selectedPercentage = parseInt(event.target.value, 10);
+  
+    // Calling the function to fetch data from backend
     this.fetchDataFromBackend();
-
-    const selectedValue = event.target.value; // Get selected value from event object
-  this.http.post('/localhost:3000/create-target', { inputValue: selectedValue }) // Send HTTP POST request to backend
-    .subscribe(response => {
-      // Handle response from backend if needed
-      console.log(response);
-    });
   }
+  
   
   fetchDataFromBackend() {
-    this.http.get('//localhost:3000/create-target').subscribe((data: any) => {
-      this.amountSaved = data.value; // Update the value in the component
-    });
+     // Sending the selected percentage as a query parameter to the backend
+  this.http.get('//localhost:3000/create-target', { params: { percentage: this.selectedPercentage.toString() } })
+  .subscribe((data: any) => {
+    this.amountSaved = data.value; // to update the value in the component
+  });
   }
 
   
 
-// ngOnInit() {
-//   // Fetch data from backend
-//   this.fetchDataFromBackend();
-// }
-
-// onOptionSelected(event: any) {
-
-//   this.fetchDataFromBackend();
-//   const selectedValue = event.target.value; // Get selected value from event object
-
-//   // Send HTTP POST request to backend with the selected value
-//   this.http.post('/create-target', { inputValue: selectedValue })
-//     .subscribe((response: any) => {
-//       this.amountSaved = response.value; // Update the value in the component
-//     });
-// }
-
-// fetchDataFromBackend() {
-//   // Fetch data from backend and update the value in the component
-//   this.http.get('/create-target').subscribe((response: any) => {
-//     this.amountSaved = response.value; // Update the value in the component
-//   });
-// }
   
 }
