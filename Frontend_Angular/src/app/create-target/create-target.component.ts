@@ -24,12 +24,7 @@ export class CreateTargetComponent implements OnInit {
     private router: Router,
     private createSavings: CreateSavingsService
   ) {} // Inject Router module
-  ngOnInit() {
-     this.fetchDataFromBackend();
-     // Fetch data from backend
-    this.getSavings();
-    
-  }
+ 
   getSavings() {
     this.savings = this.createSavings.getStoreSavings();
     // console.log(this.savings)
@@ -64,6 +59,14 @@ export class CreateTargetComponent implements OnInit {
     this.router.navigate(['/create-savings']);
   };
 
+  ngOnInit() {
+   
+    this.fetchDataFromBackend();
+    // Fetch data from backend
+   this.getSavings();
+   
+ }
+
   onOptionSelected(event: any) {
     // Get the selected percentage from the event object and parse it as a number
     this.selectedPercentage = parseInt(event.target.value, 10);
@@ -74,8 +77,7 @@ export class CreateTargetComponent implements OnInit {
 
   fetchDataFromBackend() {
     // Sending the selected percentage as a query parameter to the backend
-    this.http
-      .get('//localhost:3000/create-target', {
+    this.http.get('//localhost:3000/create-target', {
         params: { percentage: this.selectedPercentage.toString() },
       })
       .subscribe((data: any) => {

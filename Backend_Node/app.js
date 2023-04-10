@@ -31,11 +31,15 @@ app.post("/", (req, res) => {
 let totalBalance = 0;
 
 app.post('/savings', (req, res) => {
-  // Get the totalBalance value from the request body
-  const newTotalBalance = req.body.totalBalance;
+  const newTotalBalance = parseFloat(req.body.totalBalance);
 
-  // Update the totalBalance value
-  totalBalance = newTotalBalance;
+  // Check if the parsed value is a valid number
+  if (isNaN(newTotalBalance)) {
+    return res.status(400).json({ message: 'Invalid totalBalance value' });
+  }
+
+    // Add the new value to the existing totalBalance value
+    totalBalance += newTotalBalance;
 
   // Send a response back to the client
   res.status(200).json({ message: 'Total balance updated successfully' });
