@@ -15,9 +15,10 @@ export class CreateTargetComponent {
   termsAndConditions: boolean = false;
   percentages: number[] = [10, 20, 30, 40, 50];
   frequencies: string[] = [
-    'daily',
-    'weekly',
+    'Daily',
+    'Weekly',
     'Monthly',
+    'Yearly',
   ];
 
   constructor(private http: HttpClient, private router: Router) {} // Inject Router module
