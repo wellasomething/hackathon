@@ -1,11 +1,21 @@
 <div>
+    <nav> 
+        <mat-icon  (click)="onClick()">arrow_back</mat-icon>
+        <p >Manage your Savings</p>
+    </nav>
+
     <div class="content">
-        <img src="../../assets/mark-left.png" alt="mark-left"/>
-        <p>>Manage your savings</p></div>
-        <div class="cards">
-            <p class="create">
-                Create a goal
-            </p>
-            <p>Track savings goal</p>
-        </div>
-</div>>
+        <mat-card>
+    
+            <button (click)="onCreateSavingsClick()" >Create a Savings Goal</button>
+       
+    </mat-card>
+    
+    <mat-card>
+        
+            <button (click)="onCreateButtonClick()">Track savings goal</button>
+        
+    </mat-card>
+    </div>
+    
+</div>
