@@ -33,6 +33,16 @@ app.get('/create-savings', (req, res) => {
 });
 
 
+// Define a route that sends the value to the frontend
+app.get('/create-target', (req, res) => {
+  
+  const amountSaved = '20000'; // Update this value with the value you want to send
+  res.json({ value: amountSaved });
+});
+
+
+
+
 //calculating the total amount saved by a user
 app.post('/create-target', (req, res)=>{
   const inputValue = req.body.inputValue;
@@ -92,6 +102,7 @@ scheduleDeduction();
 
 
 });
+
 
 
 

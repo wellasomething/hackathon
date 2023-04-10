@@ -11,9 +11,13 @@
       <form (ngSubmit)="onSubmit()">
         <div class="form-group">
           <label for="percentage">Percentage</label>
-          <select class="form-control" id="percentage" name="percentage">
+          <select (change)="onOptionSelected($event)" class="form-control" id="percentage" name="percentage">
             <option *ngFor="let percentage of percentages" [value]="percentage">{{ percentage }}%</option>
           </select>
+          <div>{{ amountSaved }}</div>
+
+
+          
         </div>
         <div class="form-group">
           <label for="frequency">Frequency</label>
