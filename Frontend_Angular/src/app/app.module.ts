@@ -6,7 +6,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { SavingsPageComponent } from './savings-page/savings-page.component';
-
 import { SuccessPageComponent } from './success-page/success-page.component';
 import { SavingsTrackerComponent } from './savings-tracker/savings-tracker.component';
 import { CreateTargetComponent } from './create-target/create-target.component';
