@@ -16,7 +16,7 @@ export class CreateTargetComponent implements OnInit {
   endDate: Date = new Date();
   termsAndConditions: boolean = false;
   percentages: number[] = [0, 10, 20, 30, 40, 50];
-  frequencies: string[] = ['Daily', 'Weekly', 'Monthly', 'Yearly'];
+  frequencies: string[] = ['Daily', 'Weekly', 'Monthly'];
   savings: any;
   amountSaved!: number;
   targetAmount!: number;
@@ -38,11 +38,11 @@ export class CreateTargetComponent implements OnInit {
   }
 
   checkInputNumber() {
-    if (this.targetAmount > 1000 && this.targetAmount < 10000) {
+    if (this.targetAmount > 1000 && this.targetAmount < 1000000) {
       this.errorMessage = null;
     } else {
       this.errorMessage =
-        'Invalid input. Please enter a number greater than &#8358; 1000 and less than &#8358; 10000.';
+        'Invalid input. Please enter a number greater than &#8358; 1000 and less than &#8358; 1000000.';
     }
   }
 
@@ -92,4 +92,17 @@ export class CreateTargetComponent implements OnInit {
         this.amountSaved = data.value; // to update the value in the component
       });
   }
+
+  onTargetAmount() {
+    // Make HTTP request to send the value to the backend
+    this.http.post('//localhost:3000/create-target', { targetAmount: this.targetAmount })
+      .subscribe(response => {
+        // Handle the response from the backend
+        console.log(response);
+      }, error => {
+        // Handle any errors that occur during the HTTP request
+        console.error(error);
+      });
+  }
+
 }

@@ -4,15 +4,23 @@
       background-image: url('/assets/login_BG.png');
       background-repeat: no-repeat;
       background-size: cover;
-      /* height:100vh; */
-      width: 100%;
     }
+
+    .gridLayout {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+  grid-auto-rows: minmax(50px, auto);
+  margin-top:1rem
+}
     
     .manage{
-      padding-left: 1.9rem;
       cursor: pointer;
       text-align: center;
       width: 7.5rem;
+    }
+    .img{
+      width:70px;
     }
 
     p{
