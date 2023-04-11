@@ -33,6 +33,7 @@ let totalBalance = 0;
 //Initialize Target amount
 let targetAmount= 0;
 
+//Initialized Amount saved
 let amountSaved = 0;
 
 app.post('/savings', (req, res) => {
@@ -126,7 +127,9 @@ scheduleDeduction();
 
 });
 
-
+app.post('/savings-tracker', (req, res)=>{
+  
+})
 
 
 

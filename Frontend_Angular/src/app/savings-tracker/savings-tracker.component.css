@@ -21,7 +21,9 @@ header {
 @media only screen and (max-width: 540px) {
   .TargetBalance {
     display: flex;
-    justify-content: space-evenly;
+
+
+  
   }
   .ImgText{
     justify-content: space-evenly;
@@ -56,5 +58,9 @@ header {
 
   .form-check-input{
     justify-content: space-evenly;
+  }
+  p.AmountSaved {
+    font-size: 1.2rem;
+    color: #e66935;
   }
 }
