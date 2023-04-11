@@ -6,17 +6,16 @@
 
   <main>
     <div class="container">
-     <div>
-  <label for="inputNumber">Enter a Amount greater than &#8358; 1000 and less than &#8358; 1000000:</label>
-  <input type="number" id="inputNumber" [(ngModel)]="targetAmount" required min="1001" max="999999" (change)="checkInputNumber()">
-  <div *ngIf="errorMessage">{{errorMessage}}</div>
-</div>
+    
       <h1 class="text-center">Save for your dream home</h1>
       <form (ngSubmit)="onSubmit()" class="form">
 
-        <input [ngModelOptions]="{ standalone: true }" [(ngModel)]="targetAmount" placeholder="Enter Total Balance" (input)="onTargetAmount()" required min="1001" max="999999" (change)="checkInputNumber()">
-        <div *ngIf="errorMessage">{{errorMessage}}</div>
-        
+        <div>
+          <label for="inputNumber">Enter a Amount greater than &#8358; 1000 and less than &#8358; 1000000:</label>
+          <input [ngModelOptions]="{ standalone: true }" [(ngModel)]="targetAmount" placeholder="Enter Total Balance" required min="1001" max="999999" (change)="checkInputNumber()" (input)="onTargetAmount()" required min="1001" max="999999" (change)="checkInputNumber()">
+          <div *ngIf="errorMessage">{{errorMessage}}</div>
+        </div>
+
         <div class="form-group">
           <label for="percentage">Select a percentage to save</label><br/>
           <select (change)="onOptionSelected($event)" class="form-control selectAll" id="percentage" name="percentage">
