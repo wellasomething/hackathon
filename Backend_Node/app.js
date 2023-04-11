@@ -33,6 +33,8 @@ let totalBalance = 0;
 //Initialize Target amount
 let targetAmount= 0;
 
+let amountSaved = 0;
+
 app.post('/savings', (req, res) => {
   const newTotalBalance = parseFloat(req.body.totalBalance);
 
@@ -61,7 +63,7 @@ app.get('/create-target', (req, res) => {
   const selectedPercentage = Number(req.query.percentage);
 
   //calculating the total amount saved
-  const amountSaved = (selectedPercentage / 100) * targetAmount;
+   amountSaved = (selectedPercentage / 100) * targetAmount;
 
   // Send the computed amountSaved value as the response
   res.json({ value: amountSaved });
@@ -86,8 +88,8 @@ app.post('/create-target', (req, res)=>{
  res.json({ message: 'This certain amount  will be deducted from your target' });
 
   // Set start date and end date for the event
-const startDate = new Date('2023-04-10'); // Example start date: April 10, 2023
-const endDate = new Date('2023-04-20');
+const startDate = new Date(); 
+const endDate = new Date();
 
 //check the frequency, date money should be deducted
 function scheduleDeduction() {

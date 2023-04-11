@@ -16,7 +16,7 @@ export class CreateTargetComponent implements OnInit {
   endDate: Date = new Date();
   termsAndConditions: boolean = false;
   percentages: number[] = [0, 10, 20, 30, 40, 50];
-  frequencies: string[] = ['Daily', 'Weekly', 'Monthly', 'Yearly'];
+  frequencies: string[] = ['Daily', 'Weekly', 'Monthly'];
   savings: any;
   amountSaved!: number;
   targetAmount!: number;
