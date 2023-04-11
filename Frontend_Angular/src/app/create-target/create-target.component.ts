@@ -38,11 +38,11 @@ export class CreateTargetComponent implements OnInit {
   }
 
   checkInputNumber() {
-    if (this.targetAmount > 1000 && this.targetAmount < 10000) {
+    if (this.targetAmount > 1000 && this.targetAmount < 1000000) {
       this.errorMessage = null;
     } else {
       this.errorMessage =
-        'Invalid input. Please enter a number greater than &#8358; 1000 and less than &#8358; 10000.';
+        'Invalid input. Please enter a number greater than &#8358; 1000 and less than &#8358; 1000000.';
     }
   }
 
