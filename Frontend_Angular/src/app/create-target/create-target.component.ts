@@ -20,15 +20,30 @@ export class CreateTargetComponent implements OnInit {
   savings: any;
   amountSaved!: number;
   targetAmount!: number;
+  errorMessage: string | null = null;
+
   constructor(
     private http: HttpClient,
     private router: Router,
     private createSavings: CreateSavingsService
   ) {} // Inject Router module
- 
+  ngOnInit() {
+    this.fetchDataFromBackend();
+    // Fetch data from backend
+    this.getSavings();
+  }
   getSavings() {
     this.savings = this.createSavings.getStoreSavings();
     // console.log(this.savings)
+  }
+
+  checkInputNumber() {
+    if (this.targetAmount > 1000 && this.targetAmount < 1000000) {
+      this.errorMessage = null;
+    } else {
+      this.errorMessage =
+        'Invalid input. Please enter a number greater than &#8358; 1000 and less than &#8358; 1000000.';
+    }
   }
 
   onSubmit() {
@@ -58,15 +73,7 @@ export class CreateTargetComponent implements OnInit {
 
   onClick() {
     this.router.navigate(['/create-savings']);
-  };
-
-  ngOnInit() {
-   
-    this.fetchDataFromBackend();
-    // Fetch data from backend
-   this.getSavings();
-   
- }
+  }
 
   onOptionSelected(event: any) {
     // Get the selected percentage from the event object and parse it as a number
