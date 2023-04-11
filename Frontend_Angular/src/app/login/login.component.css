@@ -1,9 +1,14 @@
+body{
+  height:100vh;
+
+}
 .card {
     display: flex;
     justify-content: center;
     height: 100%;
     align-items: center;
     flex-direction: column;
+    
   }
   /* mat-card{
     max-width: 600px;
@@ -43,9 +48,10 @@
     padding-block-end: 2rem;
   }
   a {
-    color: #ff8a00;
+    color: #E66935;
     font-size: 1rem;
     text-decoration: none;
+    padding-block-end: 1rem;
   }
   button {
     align-self: center;
@@ -55,14 +61,11 @@
     
     
   }
-  .signUp{
-    display: flex;
-    justify-content: center;
-  }
+ 
 
   
   span{
-    color:#ff8a00;
+    color:#E66935;
   }
   
   @media only screen and (max-width: 540px) {
@@ -72,7 +75,6 @@
     .card{
       width:80%;
       margin-inline: auto;
-      height: auto;
       
     }
     .example-form{
