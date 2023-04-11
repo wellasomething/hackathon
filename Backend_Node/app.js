@@ -36,6 +36,8 @@ let targetAmount= 0;
 //Initialized Amount saved
 let amountSaved = 0;
 
+let interestEarned = 0;
+
 app.post('/savings', (req, res) => {
   const newTotalBalance = parseFloat(req.body.totalBalance);
 
@@ -127,9 +129,16 @@ scheduleDeduction();
 
 });
 
-// app.post('/savings-tracker', (req, res)=>{
+app.get('/savings-tracker', (req, res)=>{
 
-// })
+  interestEarned = (5/100) * amountSaved;
+    // Send the response with all the values
+    res.json({ 
+      targetAmount: targetAmount,
+      amountSaved: amountSaved,
+      interestEarned: interestEarned 
+    });
+})
 
 
 
