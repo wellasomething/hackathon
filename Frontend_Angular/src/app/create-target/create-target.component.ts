@@ -1,13 +1,15 @@
-import { Component } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router'; // Import Router module
+import { CreateSavingsService } from 'app/create-savings-goal/service/create-savings.service';
+
 
 @Component({
   selector: 'app-create-target',
   templateUrl: './create-target.component.html',
   styleUrls: ['./create-target.component.css'],
 })
-export class CreateTargetComponent {
+export class CreateTargetComponent implements OnInit {
   selectedPercentage: number = 0;
   selectedFrequency: string = '';
   startDate: Date = new Date();
@@ -20,8 +22,19 @@ export class CreateTargetComponent {
     'Monthly',
     'Yearly',
   ];
+  savings:any;
+  constructor(private http: HttpClient, private router: Router, private createSavings:CreateSavingsService) {} // Inject Router module
+  ngOnInit(): void {
+    this.getSavings()
+    
+  }
+  getSavings(){
+  this.savings = this.createSavings.getStoreSavings()
+ // console.log(this.savings)
+}
 
-  constructor(private http: HttpClient, private router: Router) {} // Inject Router module
+
+
 
   onSubmit() {
     // Prepare form data

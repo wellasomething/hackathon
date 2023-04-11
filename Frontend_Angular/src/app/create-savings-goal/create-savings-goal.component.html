@@ -6,26 +6,7 @@
 <p class="balance">Total Balance: &#8358;{{ this.totalBalance }}</p>
 <p class="select"> Select a savings goal</p>
 <div class="content">
-    <mat-card>
-    
-        <button (click)="onAccomodation()">Accomodation</button>
-    
-    </mat-card>
-    
-    <mat-card>
-    
-        <button (click)="onBusiness()">Business</button>
-    
-    </mat-card>
-    <mat-card>
-        
-        <button (click)="onEmergency()">Emergency</button>
-    
-    </mat-card>
-    
-    <mat-card>
-    
-        <button (click)="onOthers()">Others</button>
-    
+    <mat-card *ngFor="let saving of savingGoals; let i = index">
+        <button (click)="onAccomodation(saving)">{{saving}}</button>
     </mat-card>
 </div>

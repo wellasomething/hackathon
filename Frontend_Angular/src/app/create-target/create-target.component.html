@@ -1,41 +1,47 @@
-
-    
-  <nav> 
+  <div class="main">
+    <nav> 
     <mat-icon  (click)="onClick()">arrow_back</mat-icon>
-    <p class="nav-content">Accomodation
-    
+    <p class="nav-content">{{savings}} </p>
 </nav>
+
   <main>
     <div class="container">
       <h1 class="text-center">Save for your dream home</h1>
-      <form (ngSubmit)="onSubmit()">
+      <form (ngSubmit)="onSubmit()" class="form">
         <div class="form-group">
-          <label for="percentage">Percentage</label>
-          <select class="form-control" id="percentage" name="percentage">
+          <label for="percentage">Select a percentage to save</label><br/>
+          <select class="form-control selectAll" id="percentage" name="percentage">
             <option *ngFor="let percentage of percentages" [value]="percentage">{{ percentage }}%</option>
           </select>
+          <p>Amount</p>
         </div>
         <div class="form-group">
-          <label for="frequency">Frequency</label>
-          <select class="form-control" id="frequency" name="frequency" >
+          <label for="frequency">Select a frequency</label><br/>
+          <select class="form-control selectAll" id="frequency" name="frequency" >
             <option *ngFor="let frequency of frequencies" [value]="frequency">{{ frequency }}</option>
           </select>
         </div>
         <div class="form-group">
-          <label for="startDate">Start Date</label>
-          <input type="date" class="form-control" id="startDate" name="startDate" >
+          <label for="startDate">Start Date</label><br/>
+          <input type="date" class="form-control selectAll" id="startDate" name="startDate" >
         </div>
         <div class="form-group">
-          <label for="endDate">End Date</label>
-          <input type="date" class="form-control" id="endDate" name="endDate">
+          <label for="endDate">End Date</label><br/>
+          <input type="date" class="form-control selectAll" id="endDate" name="endDate">
         
         </div>
-        <div class="form-group form-check">
+        <div class="form-group form-check" style="display: flex;
+    justify-content: center;">
             <input type="checkbox" class="form-check-input" id="termsAndConditions" name="termsAndConditions" [checked]="termsAndConditions" (change)="termsAndConditions = !termsAndConditions">
             <label class="form-check-label" for="termsAndConditions">I agree to the terms and conditions</label>
              </div>
-        <button type="submit" class="btn btn-primary" [disabled]="!termsAndConditions">Submit</button>
+             <p class="center">After creating this plan, you will be charged 5% of the amount you saved to make withdrawal.</p>
+            <!-- <p class="error">Please accept terms and conditions first</p> -->
+        <button type="submit" class="btn btn-primary" [disabled]="!termsAndConditions" style="background: #ff3c00; color: white; margin-top: 1rem; height: 50px;"
+            mat-raised-button>Create Plan</button>
       </form>
     </div>
   </main>
+  </div>
+  
   
