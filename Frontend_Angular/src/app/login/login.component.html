@@ -5,10 +5,9 @@
         <p>An error occurred while logging in. Please try again later.</p>
       </div>
       <mat-card class="card">
-        
         <header class="login-cont">
           <img src="../../assets/gtLogo.png" alt="Logo" />
-          <h1 class="login">Login</h1>
+          <h1 class="login">Log in</h1>
         </header>
         <form class="example-form" (ngSubmit)="onSubmit()">
           <mat-form-field class="example-full-width input1 ">
@@ -40,16 +39,22 @@
             </button>
           </mat-form-field>
           <a href="/forgot-password">Forgot password?</a>
+          
           <p class="error-message" *ngIf="loginError">
             Invalid email or password!
           </p>
+
           <button
-            style="background: #ff3c00; color: white; margin-top: 1rem; height: 50px;"
+            style=" background: #ff3c00; color: white; margin-top: 1rem; height: 50px;"
             mat-raised-button
           >
             Login
           </button>
         </form>
+        <div class="signUp">
+          <p>Not registered? <span>Sign Up</span></p>
+        
+        </div>
       </mat-card>
     
     
