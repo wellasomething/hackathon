@@ -85,8 +85,7 @@ export class CreateTargetComponent implements OnInit {
 
   fetchDataFromBackend() {
     // Sending the selected percentage as a query parameter to the backend
-    this.http
-      .get('//localhost:3000/create-target', {
+    this.http.get('//localhost:3000/create-target', {
         params: { percentage: this.selectedPercentage.toString() },
       })
       .subscribe((data: any) => {
