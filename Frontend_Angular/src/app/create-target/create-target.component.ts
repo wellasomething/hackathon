@@ -92,4 +92,17 @@ export class CreateTargetComponent implements OnInit {
         this.amountSaved = data.value; // to update the value in the component
       });
   }
+
+  onTargetAmount() {
+    // Make HTTP request to send the value to the backend
+    this.http.post('//localhost:3000/create-target', { targetAmount: this.targetAmount })
+      .subscribe(response => {
+        // Handle the response from the backend
+        console.log(response);
+      }, error => {
+        // Handle any errors that occur during the HTTP request
+        console.error(error);
+      });
+  }
+
 }
