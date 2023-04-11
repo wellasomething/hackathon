@@ -2,43 +2,65 @@
   <mat-icon (click)="onClick()">arrow_back</mat-icon>
   <p class="nav-content">Track your Savings</p>
 </nav>
-
 <p class="Text">See how close you are to achieving your goal</p>
 <div class="content">
   <div class="ImgText">
     <img src="../../assets/GTCO 2.svg" alt="HomeIcon" width="70px" />
-
     <div>
-
-        <h3>Accomodation</h3>
-  
-
-        <div class="TargetBalance">
-          <div class="Target">
-            <p>Target</p>
-            <p>#100,000.00</p>
-          </div>
-      
-          <div class="Balance">
-            <p>Balance</p>
-      
-            <p>#50,000.00</p>
-          </div>
+      <h3>Accomodation</h3>
+      <div class="TargetBalance">
+        <div class="Target">
+          <p>Target</p>
         </div>
-
+        <div class="Balance">
+          <p>Balance</p>
+        </div>
+      </div>
     </div>
+  </div>
 
-   
-</div>
-
-  <br />
-  <br />
-
-  <div class="">
+  <div class="AmountSaved">
     <p>Amount Saved</p>
-    <p>#50,000.00</p>
-
     <p>Interest Earned</p>
-    <p>#5,000.00</p>
+  </div>
+
+  <div class="endDateTime">
+    <p class="EndDate">End Date:{{ this.endDate }}</p>
+
+    <p class="Charges">You will be charged 5% of your Savings</p>
+    <!-- <p>Charge: {{Amount}}</p> -->
+
+    <div
+      class="form-group form-check"
+      style="display: flex; justify-content: center"
+    >
+      <input
+        type="checkbox"
+        class="form-check-input"
+        id="ProceedToCancelSavings"
+        name="ProceedToCancelSavings"
+        [checked]="ProceedToCancelSavings"
+        (change)="ProceedToCancelSavings = !ProceedToCancelSavings"
+      />
+      <label class="form-check-label" for="ProceedToCancelSavings">
+        Proceed</label
+      >
+
+      <button
+        type="submit"
+        class="btn btn-primary"
+        [disabled]="!ProceedToCancelSavings"
+        style="
+          background: #fa3d03;
+          color: white;
+          margin-top: 1rem;
+          height: 50px;
+          width: 400px;
+        "
+        mat-raised-button
+      >
+        Cancel Plan
+      </button>
+    </div>
   </div>
 </div>

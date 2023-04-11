@@ -1,48 +1,60 @@
 header {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1rem;
+}
+
+.logo {
+  height: 50px;
+  width: auto;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.text-center {
+  text-align: center;
+}
+@media only screen and (max-width: 540px) {
+  .TargetBalance {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-evenly;
+  }
+  .ImgText{
+    justify-content: space-evenly;
+  }
+  nav {
+    background-color: #e66935;
+    color: white;
+    display: flex;
+    gap: 4rem;
     padding: 1rem;
   }
-  
-  .logo {
-    height: 50px;
-    width: auto;
+
+  p,
+  h3 {
+    text-align: center;
+    font-size: 16px;
+    font-weight: 100;
+    font-size: 1.2rem;
+    margin-bottom: 0;
   }
-  
-  .container {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 1rem;
-  }
-  
-  .text-center {
+  h3 {
     text-align: center;
   }
-  @media only screen and (max-width: 540px){
-
-    .TargetBalance{display: flex;
-    }
-
-    .ImgText{
-        display: flex;
-        gap: 2rem;
-        padding: 1rem;
-    }
-    nav{
-      background-color: #ff3c00;
-      color: white;
-      display: flex;
-      gap: 4rem;
-      padding: 1rem;
-    }
-    p{
-      text-align: center;
-       font-size: 16px; 
-       font-weight: 700; 
-       font-size: 1.2rem;
-       margin-bottom: 0;
-    }
-    h3{
-        text-align: center;
-    }
+  p.Charges {
+    font-size: 1.2rem;
+    color: #e66935;
   }
+  .AmountSaved {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .form-check-input{
+    justify-content: space-evenly;
+  }
+}
