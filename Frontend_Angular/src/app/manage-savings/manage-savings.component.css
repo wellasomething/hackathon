@@ -43,16 +43,17 @@ button{
    
 }
 button:hover{
-    background-color: #ff3c00;
+    background-color: #E66935;
     color: white;
-    border-color: #ff3c00;
+    border-color: #E66935;
 }
 nav{
-  background-color: #ff3c00;
+  background-color: #E66935;
   color: white;
   display: flex;
   gap: 4rem;
   padding: 1rem;
+  align-items: center;
 }
 mat-icon{
   color: white;

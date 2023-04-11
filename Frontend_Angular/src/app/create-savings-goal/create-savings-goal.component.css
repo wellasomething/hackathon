@@ -44,22 +44,20 @@ header {
        
     }
     button:hover{
-        background-color: #ff3c00;
+        background-color: #E66935;
         color: white;
-        border-color: #ff3c00;
+        border-color: #E66935;
 
     }
     
-      nav{
-        background-color: #ff3c00;
-        color: white;
-        display: flex;
-        gap: 4rem;
-        padding: 1rem;
-      }
-      .content{
-        margin-top: 40px;
-      }
+    nav{
+  background-color: #E66935;
+  color: white;
+  display: flex;
+  gap: 4rem;
+  padding: 1rem;
+  align-items: center;
+}
 
       .balance{
         text-align: left;
@@ -72,7 +70,7 @@ header {
          font-size: 16px; 
          font-weight: 700; 
          font-size: 1.2rem;
-         margin-bottom: 0;
+         margin: 0;
       }
       .select{
         font-weight: 100;
