@@ -15,26 +15,25 @@ export class CreateTargetComponent implements OnInit {
   startDate: Date = new Date();
   endDate: Date = new Date();
   termsAndConditions: boolean = false;
-  percentages: number[] = [10, 20, 30, 40, 50];
-  frequencies: string[] = [
-    'Daily',
-    'Weekly',
-    'Monthly',
-    'Yearly',
-  ];
-  savings:any;
-  constructor(private http: HttpClient, private router: Router, private createSavings:CreateSavingsService) {} // Inject Router module
-  ngOnInit(): void {
-    this.getSavings()
+  percentages: number[] = [0, 10, 20, 30, 40, 50];
+  frequencies: string[] = ['Daily', 'Weekly', 'Monthly', 'Yearly'];
+  savings: any;
+  amountSaved!: number;
+  constructor(
+    private http: HttpClient,
+    private router: Router,
+    private createSavings: CreateSavingsService
+  ) {} // Inject Router module
+  ngOnInit() {
+     this.fetchDataFromBackend();
+     // Fetch data from backend
+    this.getSavings();
     
   }
-  getSavings(){
-  this.savings = this.createSavings.getStoreSavings()
- // console.log(this.savings)
-}
-
-
-
+  getSavings() {
+    this.savings = this.createSavings.getStoreSavings();
+    // console.log(this.savings)
+  }
 
   onSubmit() {
     // Prepare form data
@@ -47,22 +46,40 @@ export class CreateTargetComponent implements OnInit {
     };
 
     // Send form data to backend API
-    this.http.post('http://localhost:3000/', formData)
-      .subscribe(
-        response => {
-          // Handle success
-          console.log('Form submitted successfully', response);
-          // Redirect to a new page after successful form submission
-          this.router.navigate(['/success']);
-        },
-        error => {
-          // Handle error
-          console.error('Failed to submit form', error);
-        }
-      );
+    this.http.post('http://localhost:3000/', formData).subscribe(
+      (response) => {
+        // Handle success
+        console.log('Form submitted successfully', response);
+        // Redirect to a new page after successful form submission
+        this.router.navigate(['/success']);
+      },
+      (error) => {
+        // Handle error
+        console.error('Failed to submit form', error);
+      }
+    );
   }
 
-  onClick(){
-    this.router.navigate(['/create-savings'])
+  onClick() {
+    this.router.navigate(['/create-savings']);
+  };
+
+  onOptionSelected(event: any) {
+    // Get the selected percentage from the event object and parse it as a number
+    this.selectedPercentage = parseInt(event.target.value, 10);
+
+    // Calling the function to fetch data from backend
+    this.fetchDataFromBackend();
+  }
+
+  fetchDataFromBackend() {
+    // Sending the selected percentage as a query parameter to the backend
+    this.http
+      .get('//localhost:3000/create-target', {
+        params: { percentage: this.selectedPercentage.toString() },
+      })
+      .subscribe((data: any) => {
+        this.amountSaved = data.value; // to update the value in the component
+      });
   }
 }

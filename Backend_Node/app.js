@@ -26,33 +26,48 @@ app.post("/", (req, res) => {
 
 });
 
+
+// Initialize totalBalance with an initial value
+let totalBalance = 0;
+
+app.post('/savings', (req, res) => {
+  // Get the totalBalance value from the request body
+  const newTotalBalance = req.body.totalBalance;
+
+  // Update the totalBalance value
+  totalBalance = newTotalBalance;
+
+  // Send a response back to the client
+  res.status(200).json({ message: 'Total balance updated successfully' });
+});
+
 // Define a route that sends the value to the frontend
 app.get('/create-savings', (req, res) => {
-  const totalBalance = '100,000.00'; // Update this value with the value you want to send
   res.json({ value: totalBalance });
 });
 
 
+// Define a route that sends the value to the frontend
+app.get('/create-target', (req, res) => {
+  
+  // Retrieving the selectedPercentage value from the query parameters
+  const selectedPercentage = Number(req.query.percentage);
+
+  //calculating the total amount saved
+  const amountSaved = (selectedPercentage / 100) * totalBalance;
+
+  // Send the computed amountSaved value as the response
+  res.json({ value: amountSaved });
+});
+
+
+
 //calculating the total amount saved by a user
 app.post('/create-target', (req, res)=>{
-  const inputValue = req.body.inputValue;
   
-
-  //performing percentage computation
-  const amountSaved = (inputValue/100) * totalBalance;
-
-  //sending the result back to the frontend
-  res.send({amountSaved});
-
-  //deduction percentage chosen every 24hrs
-  // function frequency(){
-
-  //   const toBeDeducted = amountSaved;
-    
-  // // Log the deduction result
-  // console.log(`Deducted ${toBeDeducted} from ${totalBalance}.`);
-  // return toBeDeducted;
-  // };
+  
+  totalBalance = req.body.totalBalance;
+ 
 
   // Set start date and end date for the event
 const startDate = new Date('2023-04-10'); // Example start date: April 10, 2023
@@ -95,7 +110,10 @@ scheduleDeduction();
 
 
 
+
+
 const port = 3000
 app.listen(port, () => {
   console.log('Server started on port 3000');
 });
+

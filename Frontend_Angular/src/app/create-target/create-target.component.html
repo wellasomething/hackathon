@@ -13,7 +13,12 @@
           <select class="form-control selectAll" id="percentage" name="percentage">
             <option *ngFor="let percentage of percentages" [value]="percentage">{{ percentage }}%</option>
           </select>
-          <p>Amount</p>
+          
+          <div>&#8358;{{ amountSaved }}</div>
+
+
+
+          
         </div>
         <div class="form-group">
           <label for="frequency">Select a frequency</label><br/>
