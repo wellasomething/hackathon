@@ -1,4 +1,5 @@
 import { Component} from '@angular/core';
+import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
@@ -19,6 +20,9 @@ export class SavingsPageComponent {
         // Handle response from backend if needed
         console.log(response);
       });
+  }
+  onClick() {
+   
   }
  
 }

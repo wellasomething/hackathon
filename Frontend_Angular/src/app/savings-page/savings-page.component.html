@@ -1,4 +1,11 @@
-<!-- input.component.html -->
-<input [(ngModel)]="totalBalance" placeholder="Enter Total Balance">
-<button (click)="onSubmit()">Submit</button>
+<nav> 
+    <mat-icon  (click)="onClick()">arrow_back</mat-icon>
+    <p class="nav-content">Savings</p>
+    
+</nav>
+<div>
+    <input [(ngModel)]="totalBalance" class= "totalBalance" placeholder="Enter Total Balance">
+    <button (click)="onSubmit()">Submit</button>
+</div>
+
 
