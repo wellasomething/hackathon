@@ -77,6 +77,7 @@ app.get('/create-target', (req, res) => {
 //calculating the total amount saved by a user
 app.post('/create-target', (req, res)=>{
   
+  const { percentage, frequency, startDate, endDate, termsAndConditions } = req.body;
   const newTarget = req.body.targetAmount;
 
   // Check if the parsed value is a valid number
@@ -90,9 +91,9 @@ app.post('/create-target', (req, res)=>{
  // Send a response back to the frontend
  res.json({ message: 'This certain amount  will be deducted from your target' });
 
-  // Set start date and end date for the event
-const startDate = new Date(); 
-const endDate = new Date();
+//   // Set start date and end date for the event
+// const startDate = new Date(); 
+// const endDate = new Date();
 
 //check the frequency, date money should be deducted
 function scheduleDeduction() {
@@ -123,9 +124,6 @@ function scheduleDeduction() {
   }
 };
 scheduleDeduction();
-
-
-
 
 });
 

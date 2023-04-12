@@ -57,7 +57,7 @@ export class CreateTargetComponent implements OnInit {
     };
 
     // Send form data to backend API
-    this.http.post('http://localhost:3000/', formData).subscribe(
+    this.http.post('http://localhost:3000/create-target', formData).subscribe(
       (response) => {
         // Handle success
         console.log('Form submitted successfully', response);
