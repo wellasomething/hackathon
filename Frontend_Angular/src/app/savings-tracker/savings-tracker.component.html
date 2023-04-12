@@ -3,7 +3,7 @@
   <p class="nav-content">Track your Savings</p>
 </nav>
 
-<p class="Text">See how close you are to achieving your goal</p>
+<p class="text">See how close you are to achieving your goal</p>
 <div class="content">
   <div class="ImgText">
     <!-- <img  src="../../assets/GTCO 2.svg" alt="HomeIcon" width="40px" />
@@ -30,11 +30,11 @@
     <p class="EndDate">End Date:{{ this.endDate }}</p>
 
     <p class="Charges">You will be charged 5% of your Savings</p>
-    <!-- <p>Charge: {{Amount}}</p> -->
+    <p class="Charges">Charge:Amount</p>
 
     <div
       class="form-group form-check"
-      style="display: flex; justify-content: center"
+      
     >
       <input
         type="checkbox"
@@ -57,7 +57,9 @@
           color: white;
           margin-top: 1rem;
           height: 50px;
-          width: 400px;
+          width: 100%;
+          font-weight:700;
+          font-size: 1.2rem;
         "
         mat-raised-button
       >
