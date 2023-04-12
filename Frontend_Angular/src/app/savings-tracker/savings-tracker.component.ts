@@ -28,7 +28,7 @@ export class SavingsTrackerComponent implements OnInit {
   ProceedToCancelSavings: boolean = false;
 
 
-  endDateTime = this.endDate;
+  // endDateTime = this.endDate;
 
 
 }

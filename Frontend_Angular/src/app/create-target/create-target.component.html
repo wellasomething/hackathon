@@ -10,9 +10,9 @@
       <h1 class="text-center">Save for your dream home</h1>
       <form (ngSubmit)="onSubmit()" class="form" >
 
-        <div>
-          <label for="inputNumber">Enter a Amount greater than &#8358; 1000 and less than &#8358; 1000000:</label>
-          <input [ngModelOptions]="{ standalone: true }"  [(ngModel)]="targetAmount" placeholder="Enter Total Balance" name="targetAmount" required min="1001" max="999999" (change)="checkInputNumber()" (input)="onTargetAmount()">
+        <div class="form-group">
+          <label for="inputNumber">Enter an amount greater than &#8358; 1000:</label>
+          <input class="selectAll" [ngModelOptions]="{ standalone: true }"  [(ngModel)]="targetAmount" placeholder="Enter Target Balance" name="targetAmount" required min="1001" max="999999" (change)="checkInputNumber()" (input)="onTargetAmount()">
           <div *ngIf="errorMessage">{{errorMessage}}</div>
         </div>
 
@@ -40,7 +40,7 @@
         </div>
         <div class="form-group">
           <label for="endDate">End Date</label><br/>
-          <input type="date" class="form-control selectAll" id="endDate" name="endDate" required>
+          <input [(ngModel)]="endDate" type="date" class="form-control selectAll" id="endDate" name="endDate" required>
         
         </div>
         <div class="form-group form-check" style="display: flex;
@@ -50,7 +50,7 @@
              </div>
              <p class="center">After creating this plan, you will be charged 5% of the amount you saved to make withdrawal.</p>
             <!-- <p class="error">Please accept terms and conditions first</p> -->
-        <button type="submit" class="btn btn-primary" [disabled]="!termsAndConditions" style="background: #ff3c00; color: white; margin-top: 1rem; height: 50px;"
+        <button type="submit" class="btn btn-primary" [disabled]="!termsAndConditions" style="background: #E66935; color: white; margin-top: 1rem; height: 50px; width:100%; font-weight: 600; font-size: 1.1rem;"
             mat-raised-button>Create Plan</button>
       </form>
     </div>
