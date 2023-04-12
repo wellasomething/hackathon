@@ -18,14 +18,9 @@ header {
 .text-center {
   text-align: center;
 }
+
 @media only screen and (max-width: 540px) {
-  .TargetBalance {
-    display: flex;
-    justify-content: space-evenly;
-  }
-  .ImgText{
-    justify-content: space-evenly;
-  }
+
   nav {
     background-color: #e66935;
     color: white;
@@ -34,34 +29,42 @@ header {
     padding: 1rem;
   }
 
-  p,
-  h3 {
+ nav>p{
+         font-size: 16px; 
+         font-weight: 700; 
+         font-size: 1.2rem;
+         margin: 0;
+ } 
+ /* h3 {
     text-align: center;
     font-size: 16px;
     font-weight: 100;
     font-size: 1.2rem;
-    margin-bottom: 0;
-  }
-  h3 {
-    text-align: center;
-  }
-  p.Charges {
+    margin: 0;
+    font-weight: 700; 
     font-size: 1.2rem;
+  } */
+
+  .Charges {
     color: #e66935;
   }
   .AmountSaved {
     display: flex;
     justify-content: space-between;
   }
-
-    .TargetBalance{display: flex;
-    }
-
     .ImgText{
         display: flex;
-        gap: 2rem;
+        flex-direction: column;
         padding: 1rem;
-    }
+        background-color: #E66935;
+        border-radius:  10px;
+        width:80%;
+        margin: 0 auto;
+        color: white;
+      
+    } 
+     /* .ImgText h2{} */
+
     nav{
       background-color: #E66935;
       color: white;
@@ -70,18 +73,25 @@ header {
       padding: 1rem;
       align-items: center;
     }
-    p{
+    h2{
       text-align: center;
-       font-size: 16px; 
-       font-weight: 700; 
-       font-size: 1.2rem;
-       margin: 0;
+      margin: 0;
     }
     h3{
-        text-align: center;
+      margin: 0;
     }
+    /* p{
+      text-align: center;
+       font-size: 16px; 
+       font-size: 1.2rem;
+       margin: 0;
+    } */
+    /* h3{
+        text-align: center;
+        font-weight: 600;
+    } */
     .part{
       display:flex;
-      
-    }
-  }
+      gap:1rem;
+  };
+}

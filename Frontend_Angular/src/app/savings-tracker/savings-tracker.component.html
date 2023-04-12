@@ -2,27 +2,29 @@
   <mat-icon (click)="onClick()">arrow_back</mat-icon>
   <p class="nav-content">Track your Savings</p>
 </nav>
+
 <p class="Text">See how close you are to achieving your goal</p>
 <div class="content">
   <div class="ImgText">
-    <img src="../../assets/GTCO 2.svg" alt="HomeIcon" width="70px" />
-    <div>
-      <h3>Accomodation</h3>
-      <div class="TargetBalance">
+    <!-- <img  src="../../assets/GTCO 2.svg" alt="HomeIcon" width="40px" />
+     -->
+      <h2>Accomodation</h2>
+      <div class="part">
         <div class="Target">
-          <p>Target</p>
+          <h3>Target</h3>
+          <p>Money</p>
         </div>
-        <div class="Balance">
-          <p>Balance</p>
-        </div>
+        <div class="Amount">
+        <h3>Amount Saved</h3>
+          <p>Money</p>
+        </div>   
+       <div class="Interest">
+       <h3>Interest Earned</h3>
+       <p>Money</p>
+     </div>
       </div>
-    </div>
-  </div>
-
-  <div class="AmountSaved">
-    <p>Amount Saved</p>
-    <p>Interest Earned</p>
-  </div>
+      </div>
+   
 
   <div class="endDateTime">
     <p class="EndDate">End Date:{{ this.endDate }}</p>
