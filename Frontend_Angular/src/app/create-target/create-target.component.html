@@ -1,13 +1,13 @@
   <div class="main">
     <nav> 
     <mat-icon  (click)="onClick()">arrow_back</mat-icon>
-    <p class="nav-content">{{savings}} </p>
+    <p class="nav-content">{{savings.header}} </p>
 </nav>
 
   <main>
     <div class="container">
     
-      <h1 class="text-center">Save for your dream home</h1>
+      <h3 class="title">{{savings.title}}</h3>
       <form (ngSubmit)="onSubmit()" class="form" >
 
         <div class="form-group">

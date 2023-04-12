@@ -7,6 +7,6 @@
 <p class="select"> Select a savings goal</p>
 <div class="content">
     <mat-card *ngFor="let saving of savingGoals; let i = index">
-        <button (click)="onAccomodation(saving)">{{saving}}</button>
+        <button (click)="onAccomodation(saving)">{{saving.header}}</button>
     </mat-card>
 </div>
