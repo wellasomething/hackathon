@@ -9,9 +9,27 @@ import { CreateSavingsService } from './service/create-savings.service';
   styleUrls: ['./create-savings-goal.component.css']
 })
 export class CreateSavingsGoalComponent implements OnInit {
-savingGoals = ["Accommodation", "Business","Education", "Emergency", "Others"]
-
-
+savingGoals =   [  {
+      header: 'Accommodation',
+     title: 'Save for a new house or apartment',
+           },
+    {
+      header: 'Business',
+      title: 'Invest in your business',
+       },
+    {
+      header: 'Education',
+     title: 'Invest in your future',
+    },
+    {
+      header: 'Emergency',
+      title: 'Be prepared for unexpected expenses',
+      },
+    {
+      header: 'Others',
+      title: 'Save for anything else',
+    }]
+// *ngFor="let saving of savingGoals; let i = index"
   totalBalance: string | undefined; // Variable to store the value from backend
   constructor(private router: Router, private http: HttpClient, private createSavings:CreateSavingsService) { }
 

@@ -21,6 +21,7 @@ export class CreateTargetComponent implements OnInit {
   amountSaved!: number;
   targetAmount!: number;
   errorMessage: string | null = null;
+  formValid: string | null = null;
 
   constructor(
     private http: HttpClient,
@@ -37,16 +38,39 @@ export class CreateTargetComponent implements OnInit {
     // console.log(this.savings)
   }
 
+  checkForm() {
+    if (
+      this.targetAmount &&
+      this.percentages &&
+      this.frequencies &&
+      this.startDate &&
+      this.endDate
+    ) {
+      this.formValid = null; // all fields have a truthy value, so form is valid
+    } else {
+      const emptyFields = [];
+      if (!this.targetAmount) emptyFields.push('Target Amount');
+      if (!this.percentages) emptyFields.push('Percentage');
+      if (!this.frequencies) emptyFields.push('Frequency');
+      if (!this.startDate) emptyFields.push('Start Date');
+      if (!this.endDate) emptyFields.push('End Date');
+      this.formValid = `Please fill in the following fields: ${emptyFields.join(
+        ', '
+      )}`;
+    }
+  }
+
   checkInputNumber() {
-    if (this.targetAmount > 1000 && this.targetAmount < 1000000) {
+    if (this.targetAmount > 1000 && this.targetAmount < 9999999999999) {
       this.errorMessage = null;
     } else {
       this.errorMessage =
-        'Invalid input. Please enter a number greater than &#8358; 1000 and less than &#8358; 1000000.';
+        'Invalid input. Please enter a number greater than 1000';
     }
   }
 
   onSubmit() {
+    this.checkForm();
     // Prepare form data
     const formData = {
       percentage: this.selectedPercentage,
@@ -85,7 +109,8 @@ export class CreateTargetComponent implements OnInit {
 
   fetchDataFromBackend() {
     // Sending the selected percentage as a query parameter to the backend
-    this.http.get('//localhost:3000/create-target', {
+    this.http
+      .get('//localhost:3000/create-target', {
         params: { percentage: this.selectedPercentage.toString() },
       })
       .subscribe((data: any) => {
@@ -95,14 +120,19 @@ export class CreateTargetComponent implements OnInit {
 
   onTargetAmount() {
     // Make HTTP request to send the value to the backend
-    this.http.post('//localhost:3000/create-target', { targetAmount: this.targetAmount })
-      .subscribe(response => {
-        // Handle the response from the backend
-        console.log(response);
-      }, error => {
-        // Handle any errors that occur during the HTTP request
-        console.error(error);
-      });
+    this.http
+      .post('//localhost:3000/create-target', {
+        targetAmount: this.targetAmount,
+      })
+      .subscribe(
+        (response) => {
+          // Handle the response from the backend
+          console.log(response);
+        },
+        (error) => {
+          // Handle any errors that occur during the HTTP request
+          console.error(error);
+        }
+      );
   }
-
 }

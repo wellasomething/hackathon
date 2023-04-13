@@ -1,18 +1,14 @@
   <div class="main">
     <nav> 
-    <mat-icon  (click)="onClick()">arrow_back</mat-icon>
-    <p class="nav-content">{{savings}} </p>
-</nav>
-
-  <main>
-    <div class="container">
-    
-      <h1 class="text-center">Save for your dream home</h1>
+      <mat-icon  (click)="onClick()">arrow_back</mat-icon>
+      <p class="nav-content">{{savings.header}} </p>
+    </nav>
+    <main class="container">
+      <h3 class="title">{{savings.title}}</h3>
       <form (ngSubmit)="onSubmit()" class="form" >
-
-        <div>
-          <label for="inputNumber">Enter a Amount greater than &#8358; 1000 and less than &#8358; 1000000:</label>
-          <input [ngModelOptions]="{ standalone: true }"  [(ngModel)]="targetAmount" placeholder="Enter Total Balance" name="targetAmount" required min="1001" max="999999" (change)="checkInputNumber()" (input)="onTargetAmount()">
+        <div class="form-group">
+          <label for="inputNumber">Enter an amount greater than &#8358; 1000:</label>
+          <input class="form-control selectAll of" [ngModelOptions]="{ standalone: true }"  [(ngModel)]="targetAmount" placeholder="Enter Target Balance" name="targetAmount" required min="1001" max="99999999999999999"  (change)="checkInputNumber()" (input)="onTargetAmount()">
           <div *ngIf="errorMessage">{{errorMessage}}</div>
         </div>
 
@@ -22,11 +18,7 @@
             <option *ngFor="let percentage of percentages" [value]="percentage">{{ percentage }}%</option>
           </select>
           
-          <div>&#8358;{{ amountSaved }}</div>
-
-
-
-          
+          <div>&#8358;{{ amountSaved }}</div>          
         </div>
         <div class="form-group">
           <label for="frequency">Select a frequency</label><br/>
@@ -36,11 +28,11 @@
         </div>
         <div class="form-group">
           <label for="startDate">Start Date</label><br/>
-          <input type="date" class="form-control selectAll" id="startDate" name="startDate" required>
+          <input type="date" class="form-control selectAll of" id="startDate" name="startDate" required>
         </div>
         <div class="form-group">
           <label for="endDate">End Date</label><br/>
-          <input type="date" class="form-control selectAll" id="endDate" name="endDate" required>
+          <input class="form-control selectAll of" [(ngModel)]="endDate" type="date"  id="endDate" name="endDate" required>
         
         </div>
         <div class="form-group form-check" style="display: flex;
@@ -48,12 +40,12 @@
             <input type="checkbox" class="form-check-input" id="termsAndConditions" name="termsAndConditions" [checked]="termsAndConditions" (change)="termsAndConditions = !termsAndConditions">
             <label class="form-check-label" for="termsAndConditions">I agree to the terms and conditions</label>
              </div>
+             <div *ngIf="formValid">{{ formValid }}</div>
              <p class="center">After creating this plan, you will be charged 5% of the amount you saved to make withdrawal.</p>
             <!-- <p class="error">Please accept terms and conditions first</p> -->
-        <button type="submit" class="btn btn-primary" [disabled]="!termsAndConditions" style="background: #ff3c00; color: white; margin-top: 1rem; height: 50px;"
+        <button type="submit" class="btn btn-primary" [disabled]="!termsAndConditions" style="background: #E66935; color: white; margin-top: 1rem; height: 50px; width:100%; font-weight: 600; font-size: 1.1rem;"
             mat-raised-button>Create Plan</button>
-      </form>
-    </div>
+    </form>
   </main>
   </div>
   

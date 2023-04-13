@@ -1,9 +1,33 @@
+      .nav-content{
+      text-align: center;
+       font-size: 16px; 
+       font-weight: 700; 
+       font-size: 1.3rem;
+       margin: 0;
+    }
+
+   .selectAll {
+  background-color: #D9D9D9;
+  width:100%;
+  border-radius:12px;
+  margin-block: 1rem;
+  padding-inline:0.5rem;
+  height:2rem;
+  border:none
+
+}
+.of{
+  max-width: 95%;
+}
+.form-group{
+      max-width: -webkit-fill-available;
+}
   .container {
     max-width: 600px;
     margin: 0 auto;
     padding: 1rem;
   }
-  h1{
+  .title{
     text-align: center;
   }
   .main{
@@ -13,13 +37,13 @@
     flex-direction: column;
   }
    nav{
-      background-color: #ff3c00;
+      background-color: #E66935;
       color: white;
       display: flex;
       gap: 4rem;
       padding: 1rem;
     }
-    .form-group{
+    form{
   width: 90%;
   margin: 0 auto;
 }
@@ -30,8 +54,8 @@
       text-align: center;
        font-size: 16px; 
        font-weight: 700; 
-       font-size: 1.2rem;
-       margin-bottom: 0;
+       font-size: 1.3rem;
+       margin: 0;
     }
 
    .selectAll {
@@ -55,7 +79,7 @@ select {
   background-size: 40px;
 };
 option:hover {
-  background-color: #ff3c00;
+  background-color: #E66935;
   color: white;
 };
  button{
