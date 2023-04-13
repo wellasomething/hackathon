@@ -79,7 +79,7 @@ app.get('/create-target', (req, res) => {
 app.post('/create-target', (req, res)=>{
   
   const { percentage, frequency, startDate, endDate, termsAndConditions } = req.body;
->>>>>>> 3a
+
   const newTarget = req.body.targetAmount;
 
   // Check if the parsed value is a valid number
@@ -92,8 +92,8 @@ app.post('/create-target', (req, res)=>{
 
 
   // Set start date and end date for the event
-const startDate = new Date(req.body.startDate); 
-const endDate = new Date(req.body.endDate);
+ startDate = new Date(req.body.startDate); 
+ endDate = new Date(req.body.endDate);
 
 
   //check the frequency, date money should be deducted
@@ -128,7 +128,7 @@ const endDate = new Date(req.body.endDate);
   // Send a response back to the frontend
   res.json({ message: 'This certain amount will be deducted from your target' });
 
-
+});
 
 app.get('/savings-tracker', (req, res)=>{
 
@@ -147,4 +147,3 @@ const port = 3000
 app.listen(port, () => {
   console.log('Server started on port 3000');
 });
-
