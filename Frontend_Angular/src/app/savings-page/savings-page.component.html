@@ -4,8 +4,13 @@
     
 </nav>
 <div>
-    <input [(ngModel)]="totalBalance" class= "totalBalance" placeholder="Enter Total Balance">
-    <button (click)="onSubmit()">Submit</button>
+    <input style="
+    outline:none;
+    border: 2px solid #D9D9D9;
+    border-radius: 10px;
+    padding: 0.5rem" [(ngModel)]="totalBalance" id= "totalBalance" placeholder="Enter Total Balance">
+    <button   style=" background: #E66935; color: white; margin-top: 1rem;"
+            mat-raised-button (click)="onSubmit()">Submit</button>
 </div>
 
 
