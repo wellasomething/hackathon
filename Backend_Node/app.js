@@ -2,15 +2,25 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const app = express();
+const path = require("path")
 
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+app.use(express.static(path.join(__dirname, 'angular/frontend-angular')));
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '/index.html'));
+});
+
+
 const users = [
   { email: "johnny001@email.com", password: "12345678" },
   { email: "janet001@email.com", password: "567891011" }, 
 ];
+
+
 
 app.post("/", (req, res) => {
   const { email, password } = req.body;
