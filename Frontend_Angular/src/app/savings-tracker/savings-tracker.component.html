@@ -52,7 +52,7 @@
         class="btn btn-primary"
         [disabled]="!ProceedToCancelSavings"
         style="
-          background: #E66935;
+          background: #dd4f05;
           color: white;
           margin-top: 1rem;
           height: 50px;
@@ -62,8 +62,19 @@
         "
         mat-raised-button
       >
-        Cancel Plan
+        Withdraw Plan
       </button>
+      <div>
+      <p>Do you wish to <span (click)="openPopup()">cancel plan?</span></p>
+
+<div class="popup" *ngIf="showPopup">
+  <p>You will be charged 5% for cancelling.</p>
+  <div class="button">
+    <button (click)="cancelPlan()">Cancel Plan</button>
+  <button (click)="exitPlan()">Exit</button>
+  </div>
+  
+</div>
     </div>
   </div>
 </div>

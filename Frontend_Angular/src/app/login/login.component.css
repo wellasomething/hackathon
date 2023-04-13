@@ -28,7 +28,7 @@ body{
   
   }
   .login{
-    color:#E66935;
+    color:#dd4f05;
   }
   
   h1 {
@@ -48,7 +48,7 @@ body{
     padding-block-end: 2rem;
   }
   a {
-    color: #E66935;
+    color: #dd4f05;
     font-size: 1rem;
     text-decoration: none;
     padding-block-end: 1rem;
@@ -65,7 +65,7 @@ body{
 
   
   span{
-    color:#E66935;
+    color:#dd4f05;
   }
   
   @media only screen and (max-width: 540px) {

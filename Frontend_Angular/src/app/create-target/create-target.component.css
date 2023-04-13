@@ -37,7 +37,7 @@
     flex-direction: column;
   }
    nav{
-      background-color: #E66935;
+      background-color: #dd4f05;
       color: white;
       display: flex;
       gap: 4rem;
@@ -79,7 +79,7 @@ select {
   background-size: 40px;
 };
 option:hover {
-  background-color: #E66935;
+  background-color: #dd4f05;
   color: white;
 };
  button{

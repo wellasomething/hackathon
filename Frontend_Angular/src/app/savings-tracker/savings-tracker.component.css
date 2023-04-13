@@ -1,52 +1,22 @@
-header {
-  display: flex;
-  justify-content: flex-end;
-  padding: 1rem;
-}
-
-.logo {
-  height: 50px;
-  width: auto;
-}
-
-.container {
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 1rem;
-}
-
-.text-center {
-  text-align: center;
-}
-
-@media only screen and (max-width: 540px) {
-
-  nav {
-    background-color: #e66935;
-    color: white;
-    display: flex;
-    gap: 4rem;
-    padding: 1rem;
+   nav{
+      background-color: #dd4f05;
+      color: white;
+      display: flex;
+      gap: 4rem;
+      padding: 0.8rem;
+       align-items: center;
+   }
+  .text{
+    text-align: center;
   }
-
- nav>p{
+  nav>p{
          font-size: 16px; 
          font-weight: 700; 
          font-size: 1.2rem;
          margin: 0;
  } 
- /* h3 {
-    text-align: center;
-    font-size: 16px;
-    font-weight: 100;
-    font-size: 1.2rem;
-    margin: 0;
-    font-weight: 700; 
-    font-size: 1.2rem;
-  } */
-
-  .Charges {
-    color: #e66935;
+ .Charges {
+      color: #dd4f05;
     text-align: center;
   }
   .AmountSaved {
@@ -57,24 +27,14 @@ header {
         display: flex;
         flex-direction: column;
         padding: 1rem;
-        background-color: #E66935;
+        background-color: #dd4f05;
         border-radius:  10px;
         width:86%;
         margin: 2rem auto;
         color: white;
         justify-content: space-between;
       
-    } 
-     /* .ImgText h2{} */
-
-    nav{
-      background-color: #E66935;
-      color: white;
-      display: flex;
-      gap: 4rem;
-      padding: 0.8rem;
-      align-items: center;
-    }
+    };
     .text{
       font-size: 20px;
       width: 90%;
@@ -94,16 +54,6 @@ header {
           width: 90%;
     margin: 0 auto;
     }
-    /* p{
-      text-align: center;
-       font-size: 16px; 
-       font-size: 1.2rem;
-       margin: 0;
-    } */
-    /* h3{
-        text-align: center;
-        font-weight: 600;
-    } */
     .part{
       display:flex;
       gap:1rem;
@@ -112,4 +62,38 @@ header {
     width:90%;
     margin: 0 auto;
   }
+  .popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 0.5rem;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  z-index: 9999;
+}
+
+.popup p {
+  margin-bottom: 0.5rem;
+}
+
+.popup button {
+  background-color: #dd4f05;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+span{
+  color:#dd4f05
+
+}
+.button{
+  display: flex;
+  gap:0.5rem;
+}
+
+  @media only screen and (max-width: 540px) {
 }
