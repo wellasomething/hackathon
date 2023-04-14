@@ -29,6 +29,7 @@ export class LoginComponent {
     this.email = ''; // initialize username with an empty string
     this.password = '';
   }
+  
 
   onSubmit() {
     const data = {
