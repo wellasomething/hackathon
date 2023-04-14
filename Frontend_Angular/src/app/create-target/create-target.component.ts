@@ -60,6 +60,7 @@ export class CreateTargetComponent implements OnInit {
     }
   }
 
+
   checkInputNumber() {
     if (this.targetAmount > 1000 && this.targetAmount < 9999999999999) {
       this.errorMessage = null;
