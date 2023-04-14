@@ -75,9 +75,11 @@ app.get('/create-target', (req, res) => {
 
 
 //calculating the total amount saved by a user
+
 app.post('/create-target', (req, res)=>{
   
   const { percentage, frequency, startDate, endDate, termsAndConditions } = req.body;
+
   const newTarget = req.body.targetAmount;
 
   // Check if the parsed value is a valid number
@@ -85,45 +87,46 @@ app.post('/create-target', (req, res)=>{
     return res.status(400).json({ message: 'Invalid totalBalance value' });
   }
 
-    // Add the new value to the existing totalBalance value
-    targetAmount = newTarget;
- 
- // Send a response back to the frontend
- res.json({ message: 'This certain amount  will be deducted from your target' });
+  // Add the new value to the existing totalBalance value
+  targetAmount = newTarget;
 
-//   // Set start date and end date for the event
-// const startDate = new Date(); 
-// const endDate = new Date();
 
-//check the frequency, date money should be deducted
-function scheduleDeduction() {
+  // Set start date and end date for the event
+ startDate = new Date(req.body.startDate); 
+ endDate = new Date(req.body.endDate);
 
-  // Get current date
-  const currentDate = new Date();
 
-  // Check if current date is within the range of start date and end date
-  if (currentDate >= startDate && currentDate <= endDate) {
+  //check the frequency, date money should be deducted
+  function scheduleDeduction() {
 
-    // Perform deduction logic here
-    const toBeDeducted = amountSaved;
+    // Get current date
+    const currentDate = new Date();
 
-    // Log the deduction result
-    console.log(`Deducted ${toBeDeducted} on ${currentDate.toDateString()}`);
+    // Check if current date is within the range of start date and end date
+    if (currentDate >= startDate && currentDate <= endDate) {
 
-  const daily = 24 * 60 * 60 * 1000;
-  const weekly = 7 * 60 * 60 * 24 * 1000;
-  const monthly = 4 * 7 * 60 * 60 * 24 * 1000;
-  setTimeout(() => {
-    // frequency();
-    scheduleDeduction(); // Schedule the next run after 24 hours
-  }, daily, weekly, monthly);
-  }
-  else{
-    console.log('Event has ended.');
+      // Perform deduction logic here
+      const toBeDeducted = amountSaved;
 
-  }
-};
-scheduleDeduction();
+      // Log the deduction result
+      console.log(`Deducted ${toBeDeducted} on ${currentDate.toDateString()}`);
+
+      const daily = 24 * 60 * 60 * 1000;
+      const weekly = 7 * 24 * 60 * 60 * 1000;
+      const monthly = 30 * 24 * 60 * 60 * 1000;
+      setTimeout(() => {
+        // frequency();
+        scheduleDeduction(); // Schedule the next run after 24 hours
+      }, daily, weekly, monthly); // Use daily or weekly or monthly as per your requirement
+    } else {
+      console.log('Event has ended.');
+
+    }
+  };
+  scheduleDeduction();
+
+  // Send a response back to the frontend
+  res.json({ message: 'This certain amount will be deducted from your target' });
 
 });
 
@@ -144,4 +147,3 @@ const port = 3000
 app.listen(port, () => {
   console.log('Server started on port 3000');
 });
-
