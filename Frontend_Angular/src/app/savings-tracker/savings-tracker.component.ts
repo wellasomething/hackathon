@@ -32,7 +32,10 @@ export class SavingsTrackerComponent implements OnInit {
     // Make an HTTP POST request to your Node.js backend endpoint
     this.http.post('//localhost:3000/savings-tracker', {}).subscribe(response => {
       this.showPopup = false;
-      this.router.navigate(['/create-savings'])
+      setTimeout(()=>{
+        this.router.navigate(['/create-savings'])
+      }, 1000);
+      
     }, error => {
       // Handle any error that occurs during the HTTP request
       console.error('Failed to cancel plan:', error);
