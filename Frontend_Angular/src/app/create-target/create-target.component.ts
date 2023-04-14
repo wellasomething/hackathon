@@ -60,7 +60,6 @@ export class CreateTargetComponent implements OnInit {
     }
   }
 
-
   checkInputNumber() {
     if (this.targetAmount > 1000 && this.targetAmount < 9999999999999) {
       this.errorMessage = null;
@@ -82,7 +81,7 @@ export class CreateTargetComponent implements OnInit {
     };
 
     // Send form data to backend API
-    this.http.post('http://localhost:3000/create-target', formData).subscribe(
+    this.http.post('http://localhost:3000/', formData).subscribe(
       (response) => {
         // Handle success
         console.log('Form submitted successfully', response);
