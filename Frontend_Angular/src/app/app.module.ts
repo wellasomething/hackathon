@@ -19,7 +19,8 @@ import { FormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatCardModule } from '@angular/material/card';
 import { CreateSavingsGoalComponent } from './create-savings-goal/create-savings-goal.component';
-import { ManageSavingsComponent } from './manage-savings/manage-savings.component'
+import { ManageSavingsComponent } from './manage-savings/manage-savings.component';
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 
 
@@ -51,6 +52,7 @@ import { ManageSavingsComponent } from './manage-savings/manage-savings.componen
     MatCardModule,
     FormsModule,
     FlexLayoutModule,
+    NgxSpinnerModule,
     
   ],
   providers: [],

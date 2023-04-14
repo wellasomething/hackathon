@@ -45,6 +45,8 @@
             <!-- <p class="error">Please accept terms and conditions first</p> -->
         <button type="submit" class="btn btn-primary" [disabled]="!termsAndConditions" style="background: #dd4f05; color: white; margin-top: 1rem; height: 50px; width:100%; font-weight: 600; font-size: 1.1rem;"
             mat-raised-button>Create Plan</button>
+            <ngx-spinner *ngIf="isLoading"></ngx-spinner>
+
     </form>
   </main>
   </div>
