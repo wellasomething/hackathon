@@ -16,8 +16,8 @@ app.use(express.static('angular/frontend-angular'))
 
 
 const users = [
-  { email: "johnny001@email.com", password: "12345678" },
-  { email: "janet001@email.com", password: "567891011" }, 
+  { email: "f.benson@yahoo.com", password: "12345678" },
+  { email: "michaelsilva@outlook.com", password: "567891011" }, 
 ];
 
 
@@ -154,8 +154,8 @@ app.get('/savings-tracker', (req, res)=>{
 });
 
 app.post('/savings-tracker', (req, res) => {
-  // Deduct 5% from the total balance
-  const deduction = totalBalance * 0.05;
+  // Deduct 5% from the amountSaved
+  const deduction = amountSaved * 0.05;
   totalBalance -= deduction;
 
   // Return the updated total balance as the response
