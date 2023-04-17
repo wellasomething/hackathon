@@ -1,6 +1,7 @@
 import { Component, ElementRef, Renderer2, ViewChild } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-login',
@@ -17,17 +18,23 @@ export class LoginComponent {
 
   @ViewChild('input_email') input_email!: ElementRef;
   @ViewChild('input_password') input_password!: ElementRef;
+  isLoading: boolean | undefined;
 
+  
   constructor(
     private http: HttpClient,
     private red: Renderer2,
-    private router: Router
+    private router: Router,
+    private spinner: NgxSpinnerService,
   ) {
     this.email = ''; // initialize username with an empty string
     this.password = '';
   }
+  
 
   onSubmit() {
+    this.isLoading = true;
+  this.spinner.show();
     const data = {
       email: this.red.selectRootElement(this.input_email['nativeElement'])
         .value,
@@ -41,8 +48,13 @@ export class LoginComponent {
         (response) => {
           // Handle successful authentication here
           if (response.success) {
-            // Navigate to welcome page if authentication was successful
-            this.router.navigate(['/dashboard']);
+
+            this.spinner.hide();
+            setTimeout(()=>{
+              // Navigate to welcome page if authentication was successful
+            this.router.navigate(['/dashboard'])
+            }, 3000)
+            ;
           } else {
             this.loginError = true;
           }
@@ -50,6 +62,8 @@ export class LoginComponent {
         (error) => {
           // Handle authentication error here
           this.IsTrue = true;
+
+          this.spinner.hide();
         }
       );
   }

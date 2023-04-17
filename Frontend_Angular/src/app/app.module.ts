@@ -21,7 +21,8 @@ import { MatCardModule } from '@angular/material/card';
 import { CreateSavingsGoalComponent } from './create-savings-goal/create-savings-goal.component';
 import { ManageSavingsComponent } from './manage-savings/manage-savings.component';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
-import { DarkToggleComponent } from './dark-toggle/dark-toggle.component'; 
+import { DarkToggleComponent } from './dark-toggle/dark-toggle.component'; ;
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 
 
@@ -53,6 +54,7 @@ import { DarkToggleComponent } from './dark-toggle/dark-toggle.component';
     MatCardModule,
     FormsModule,
     FlexLayoutModule,
+    NgxSpinnerModule,
     MatSlideToggleModule,
   ],
   providers: [],

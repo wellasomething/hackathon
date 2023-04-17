@@ -35,6 +35,7 @@
               <mat-icon>
                 {{ hidePassword ? 'visibility_off' : 'visibility' }}
               </mat-icon>
+              
             </button>
           </mat-form-field>
           <a href="/forgot-password">Forgot password?</a>
@@ -49,6 +50,7 @@
           >
             Login
           </button>
+          <ngx-spinner *ngIf="isLoading"></ngx-spinner>
         </form>
       
           <p>Not registered? <span>Sign Up</span></p>

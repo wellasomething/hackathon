@@ -2,6 +2,7 @@ import { Component, OnInit} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router'; // Import Router module
 import { CreateSavingsService } from 'app/create-savings-goal/service/create-savings.service';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 
 @Component({
@@ -22,11 +23,15 @@ export class CreateTargetComponent implements OnInit {
   targetAmount!: number;
   errorMessage: string | null = null;
   formValid: string | null = null;
+  isLoading: boolean | undefined;
+
+  
 
   constructor(
     private http: HttpClient,
     private router: Router,
-    private createSavings: CreateSavingsService
+    private createSavings: CreateSavingsService,
+    private spinner: NgxSpinnerService
   ) {} // Inject Router module
   ngOnInit() {
     this.fetchDataFromBackend();
@@ -60,7 +65,6 @@ export class CreateTargetComponent implements OnInit {
     }
   }
 
-
   checkInputNumber() {
     if (this.targetAmount > 1000 && this.targetAmount < 9999999999999) {
       this.errorMessage = null;
@@ -70,7 +74,12 @@ export class CreateTargetComponent implements OnInit {
     }
   }
 
+  
   onSubmit() {
+     // Show the spinner
+  this.isLoading = true;
+  this.spinner.show();
+
     this.checkForm();
     // Prepare form data
     const formData = {
@@ -82,16 +91,23 @@ export class CreateTargetComponent implements OnInit {
     };
 
     // Send form data to backend API
-    this.http.post('http://localhost:3000/create-target', formData).subscribe(
+    this.http.post('http://localhost:3000/', formData).subscribe(
       (response) => {
         // Handle success
         console.log('Form submitted successfully', response);
+
+        setTimeout(()=>{
+          this.spinner.hide();
         // Redirect to a new page after successful form submission
         this.router.navigate(['/success']);
+        },3000);
+       
       },
       (error) => {
         // Handle error
         console.error('Failed to submit form', error);
+
+        this.spinner.hide();
       }
     );
   }

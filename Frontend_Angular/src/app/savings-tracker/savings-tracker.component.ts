@@ -29,12 +29,28 @@ export class SavingsTrackerComponent implements OnInit {
   }
 
   cancelPlan() {
-    // Add your cancel plan logic here
-    // This method will be called when the user clicks on the "Cancel Plan" button inside the popup
+    // Make an HTTP POST request to your Node.js backend endpoint
+    this.http.post('//localhost:3000/savings-tracker', {}).subscribe(response => {
+      this.showPopup = false;
+      setTimeout(()=>{
+        this.router.navigate(['/create-savings'])
+      }, 1000);
+      
+    }, error => {
+      // Handle any error that occurs during the HTTP request
+      console.error('Failed to cancel plan:', error);
+    });
   }
+
   exitPlan(){
     this.showPopup = false;
 
+  }
+
+  onWithdraw(){
+    this.http.post('//localhost:3000/savings-tracker', {}).subscribe(response =>{
+      this.router.navigate(['/']);
+    })
   }
 
   onClick() {

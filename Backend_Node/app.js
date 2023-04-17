@@ -3,14 +3,24 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const app = express();
 
+
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+
+
+
+app.use(express.static('angular/frontend-angular'))
+
+
+
 
 const users = [
   { email: "johnny001@email.com", password: "12345678" },
   { email: "janet001@email.com", password: "567891011" }, 
 ];
+
+
 
 app.post("/", (req, res) => {
   const { email, password } = req.body;
@@ -28,7 +38,7 @@ app.post("/", (req, res) => {
 
 
 // Initialize totalBalance with an initial value
-let totalBalance = 0;
+let totalBalance = 100000;
 
 //Initialize Target amount
 let targetAmount= 0;
@@ -38,20 +48,20 @@ let amountSaved = 0;
 
 let interestEarned = 0;
 
-app.post('/savings', (req, res) => {
-  const newTotalBalance = parseFloat(req.body.totalBalance);
+// app.post('/savings', (req, res) => {
+//   const newTotalBalance = parseFloat(req.body.totalBalance);
 
-  // Check if the parsed value is a valid number
-  if (isNaN(newTotalBalance)) {
-    return res.status(400).json({ message: 'Invalid totalBalance value' });
-  }
+//   // Check if the parsed value is a valid number
+//   if (isNaN(newTotalBalance)) {
+//     return res.status(400).json({ message: 'Invalid totalBalance value' });
+//   }
 
-    // Add the new value to the existing totalBalance value
-    totalBalance += newTotalBalance;
+//     // Add the new value to the existing totalBalance value
+//     totalBalance += newTotalBalance;
 
-  // Send a response back to the client
-  res.status(200).json({ message: 'Total balance updated successfully' });
-});
+//   // Send a response back to the client
+//   res.status(200).json({ message: 'Total balance updated successfully' });
+// });
 
 // Define a route that sends the value to the frontend
 app.get('/create-savings', (req, res) => {
@@ -67,6 +77,7 @@ app.get('/create-target', (req, res) => {
 
   //calculating the total amount saved
    amountSaved = (selectedPercentage / 100) * targetAmount;
+   
 
   // Send the computed amountSaved value as the response
   res.json({ value: amountSaved });
@@ -133,13 +144,25 @@ app.post('/create-target', (req, res)=>{
 app.get('/savings-tracker', (req, res)=>{
 
   interestEarned = (5/100) * amountSaved;
+  
     // Send the response with all the values
     res.json({ 
       targetAmount: targetAmount,
       amountSaved: amountSaved,
       interestEarned: interestEarned 
     });
-})
+});
+
+app.post('/savings-tracker', (req, res) => {
+  // Deduct 5% from the total balance
+  const deduction = totalBalance * 0.05;
+  totalBalance -= deduction;
+
+  // Return the updated total balance as the response
+  res.json({ totalBalance: totalBalance });
+
+
+});
 
 
 
