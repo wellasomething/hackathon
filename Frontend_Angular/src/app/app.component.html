@@ -1,4 +1,7 @@
-<!-- parent.component.html -->
+<body style="overflow: hidden;"
+ [ngClass]="{'dark-theme': themeService.isDarkThemeEnabled}">
+    <router-outlet class="container"> 
+</router-outlet>
+ <app-dark-toggle style="margin-left: 3rem;"></app-dark-toggle>
+</body>
 
-
-<router-outlet></router-outlet>

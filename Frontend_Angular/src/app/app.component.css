@@ -1,5 +1,13 @@
 body{
     display: block;
     min-height: 100%;
-    padding: 60px 1rem;
 }
+.dark-theme {
+  background-color: #333;
+  color: #fff;
+}
+ .container{
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+ }

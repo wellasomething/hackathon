@@ -5,26 +5,23 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
 })
 export class LoginComponent {
   email: string;
   password: string;
 
-
   IsTrue: boolean = false;
   loginError: boolean = false;
   hidePassword = true;
 
-
   @ViewChild('input_email') input_email!: ElementRef;
   @ViewChild('input_password') input_password!: ElementRef;
 
-  
   constructor(
     private http: HttpClient,
     private red: Renderer2,
-    private router: Router,
+    private router: Router
   ) {
     this.email = ''; // initialize username with an empty string
     this.password = '';

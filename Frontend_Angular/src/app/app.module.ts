@@ -19,7 +19,9 @@ import { FormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatCardModule } from '@angular/material/card';
 import { CreateSavingsGoalComponent } from './create-savings-goal/create-savings-goal.component';
-import { ManageSavingsComponent } from './manage-savings/manage-savings.component'
+import { ManageSavingsComponent } from './manage-savings/manage-savings.component';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { DarkToggleComponent } from './dark-toggle/dark-toggle.component'; 
 
 
 
@@ -30,13 +32,13 @@ import { ManageSavingsComponent } from './manage-savings/manage-savings.componen
     LoginComponent,
     DashboardComponent,
     SavingsPageComponent,
-   
+
     SuccessPageComponent,
     SavingsTrackerComponent,
     CreateTargetComponent,
     CreateSavingsGoalComponent,
     ManageSavingsComponent,
-
+    DarkToggleComponent,
   ],
   imports: [
     BrowserModule,
@@ -44,16 +46,16 @@ import { ManageSavingsComponent } from './manage-savings/manage-savings.componen
     BrowserAnimationsModule,
     HttpClientModule,
     MatIconModule,
-    MatFormFieldModule, 
+    MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
     MatToolbarModule,
     MatCardModule,
     FormsModule,
     FlexLayoutModule,
-    
+    MatSlideToggleModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
