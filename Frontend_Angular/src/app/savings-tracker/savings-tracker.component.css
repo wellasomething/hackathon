@@ -55,8 +55,8 @@
     margin: 0 auto;
     }
     .part{
-      display:flex;
-      gap:1rem;
+      display:grid;
+          grid-template-columns: auto auto auto;
   };
   .form-check{
     width:90%;
