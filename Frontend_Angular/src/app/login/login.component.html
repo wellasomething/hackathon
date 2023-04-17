@@ -21,18 +21,18 @@
           <mat-form-field class="example-full-width">
             <mat-label>Password</mat-label>
             <input
+            matInput [type]="hidePassword ? 'password' : 'text'" [(ngModel)]="password"
             #input_password
-              matInput
-              type="password"
               placeholder="Enter your password"
             />
             <button
               mat-icon-button
               matSuffix
               aria-label="Toggle password visibility"
-              (click)="hidePassword = !hidePassword"
+              type="button"
+              (click)= showPassword()
             >
-              <mat-icon>
+              <mat-icon >
                 {{ hidePassword ? 'visibility_off' : 'visibility' }}
               </mat-icon>
               

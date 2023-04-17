@@ -15,6 +15,9 @@ export class LoginComponent {
   IsTrue: boolean = false;
   loginError: boolean = false;
   hidePassword = true;
+  showPassword() {
+    this.hidePassword = !this.hidePassword;
+  }
 
   @ViewChild('input_email') input_email!: ElementRef;
   @ViewChild('input_password') input_password!: ElementRef;
