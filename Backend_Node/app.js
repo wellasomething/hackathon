@@ -16,8 +16,8 @@ app.use(express.static('angular/frontend-angular'))
 
 
 const users = [
-  { email: "johnny001@email.com", password: "12345678" },
-  { email: "janet001@email.com", password: "567891011" }, 
+  { email: "f.benson@yahoo.com", password: "12345678" },
+  { email: "michaelsilva@outlook.com", password: "567891011" }, 
 ];
 
 
@@ -47,6 +47,8 @@ let targetAmount= 0;
 let amountSaved = 0;
 
 let interestEarned = 0;
+
+
 
 // app.post('/savings', (req, res) => {
 //   const newTotalBalance = parseFloat(req.body.totalBalance);
@@ -101,6 +103,8 @@ app.post('/create-target', (req, res)=>{
   // Add the new value to the existing totalBalance value
   targetAmount = newTarget;
 
+  
+
 
   // Set start date and end date for the event
  startDate = new Date(req.body.startDate); 
@@ -149,20 +153,27 @@ app.get('/savings-tracker', (req, res)=>{
     res.json({ 
       targetAmount: targetAmount,
       amountSaved: amountSaved,
-      interestEarned: interestEarned 
+      interestEarned: interestEarned,
+    
     });
 });
 
 app.post('/savings-tracker', (req, res) => {
-  // Deduct 5% from the total balance
-  const deduction = totalBalance * 0.05;
+  // Deduct 5% from the amountSaved
+  const deduction = amountSaved * 0.05;
   totalBalance -= deduction;
+
 
   // Return the updated total balance as the response
   res.json({ totalBalance: totalBalance });
 
 
 });
+
+app.post('/success', (req, res)=>{
+  totalBalance -= amountSaved;
+  res.json({totalBalance: totalBalance});
+})
 
 
 

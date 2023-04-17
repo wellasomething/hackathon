@@ -11,6 +11,8 @@ export class SuccessPageComponent {
   constructor(private router: Router, private http: HttpClient) { }
 
   onClick(){
-    this.router.navigate(['/savings-tracker'])
+    this.http.post('//localhost:3000/success', {}).subscribe(response =>{
+      this.router.navigate(['/savings-tracker']);
+    })
   }
 }
