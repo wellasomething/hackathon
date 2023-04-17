@@ -15,10 +15,6 @@
          font-size: 1.2rem;
          margin: 0;
  } 
- .Charges {
-      color: #dd4f05;
-    text-align: center;
-  }
   .AmountSaved {
     display: flex;
     justify-content: space-between;

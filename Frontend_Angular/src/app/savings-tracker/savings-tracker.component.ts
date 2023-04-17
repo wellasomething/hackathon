@@ -47,10 +47,14 @@ export class SavingsTrackerComponent implements OnInit {
 
   }
 
+  onOk(){
+    this.router.navigate(['/create-savings'])
+  }
+
   onWithdraw(){
-    this.http.post('//localhost:3000/savings-tracker', {}).subscribe(response =>{
+    this.http.post('//localhost:3000/savings-tracker', {}).subscribe((response) => {
       this.router.navigate(['/create-savings']);
-    })
+    });
   }
 
   onClick() {

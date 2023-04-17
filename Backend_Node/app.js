@@ -160,11 +160,12 @@ app.get('/savings-tracker', (req, res)=>{
 app.post('/savings-tracker', (req, res) => {
   // Deduct 5% from the amountSaved
   const deduction = amountSaved * 0.05;
-  totalBalance -= deduction;
-
+  totalBalance += (amountSaved - deduction)
+ // totalBalance -= deduction;
+  
 
   // Return the updated total balance as the response
-  res.json({ totalBalance: totalBalance });
+  res.json({ totalBalance: totalBalance  });
 
 
 });
