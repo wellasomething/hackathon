@@ -52,7 +52,7 @@ nav{
   color: white;
   display: flex;
   gap: 4rem;
-  padding: 1rem;
+  padding-inline: 1rem;
   align-items: center;
 }
 mat-icon{
