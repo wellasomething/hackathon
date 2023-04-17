@@ -14,7 +14,7 @@ app.use(express.static('angular/frontend-angular'))
 
 
 
-
+//login
 const users = [
   { email: "f.benson@yahoo.com", password: "12345678" },
   { email: "michaelsilva@outlook.com", password: "567891011" }, 
@@ -80,7 +80,6 @@ app.get('/create-target', (req, res) => {
   //calculating the total amount saved
    amountSaved = (selectedPercentage / 100) * targetAmount;
    
-
   // Send the computed amountSaved value as the response
   res.json({ value: amountSaved });
 });
@@ -147,7 +146,7 @@ app.post('/create-target', (req, res)=>{
 
 app.get('/savings-tracker', (req, res)=>{
 
-  interestEarned = (5/100) * amountSaved;
+  interestEarned = (3/100) * amountSaved;
   
     // Send the response with all the values
     res.json({ 
@@ -177,7 +176,7 @@ app.post('/success', (req, res)=>{
 
 
 
-const port = 3000
+const port = 3000 || process.env.PORT;
 app.listen(port, () => {
   console.log('Server started on port 3000');
 });
