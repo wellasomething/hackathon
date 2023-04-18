@@ -36,8 +36,7 @@ export class LoginComponent {
   
 
   onSubmit() {
-    this.isLoading = true;
-  this.spinner.show();
+   
     const data = {
       email: this.red.selectRootElement(this.input_email['nativeElement'])
         .value,
@@ -66,7 +65,6 @@ export class LoginComponent {
           // Handle authentication error here
           this.IsTrue = true;
 
-          this.spinner.hide();
         }
       );
   }
