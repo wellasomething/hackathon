@@ -8,19 +8,13 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-
-
 app.use(express.static('angular/frontend-angular'))
-
-
 
 //login
 const users = [
   { email: "f.benson@yahoo.com", password: "12345678" },
   { email: "michaelsilva@outlook.com", password: "567891011" }, 
 ];
-
-
 
 app.post("/", (req, res) => {
   const { email, password } = req.body;
@@ -32,10 +26,8 @@ app.post("/", (req, res) => {
   } else {
     res.send({ success: false });
   }
-  
 
 });
-
 
 // Initialize totalBalance with an initial value
 let totalBalance = 100000;
@@ -48,22 +40,7 @@ let amountSaved = 0;
 
 let interestEarned = 0;
 
-
-
-// app.post('/savings', (req, res) => {
-//   const newTotalBalance = parseFloat(req.body.totalBalance);
-
-//   // Check if the parsed value is a valid number
-//   if (isNaN(newTotalBalance)) {
-//     return res.status(400).json({ message: 'Invalid totalBalance value' });
-//   }
-
-//     // Add the new value to the existing totalBalance value
-//     totalBalance += newTotalBalance;
-
-//   // Send a response back to the client
-//   res.status(200).json({ message: 'Total balance updated successfully' });
-// });
+let endDate = new Date();
 
 // Define a route that sends the value to the frontend
 app.get('/create-savings', (req, res) => {
@@ -84,13 +61,11 @@ app.get('/create-target', (req, res) => {
   res.json({ value: amountSaved });
 });
 
-
-
 //calculating the total amount saved by a user
 
 app.post('/create-target', (req, res)=>{
   
-  const { percentage, frequency, startDate, endDate, termsAndConditions } = req.body;
+  const { percentage, frequency,  termsAndConditions } = req.body;
 
   const newTarget = req.body.targetAmount;
 
@@ -102,12 +77,9 @@ app.post('/create-target', (req, res)=>{
   // Add the new value to the existing totalBalance value
   targetAmount = newTarget;
 
-  
-
-
   // Set start date and end date for the event
- startDate = new Date(req.body.startDate); 
- endDate = new Date(req.body.endDate);
+ const startDate = new Date(req.body.startDate); 
+ const endDate = new Date(req.body.endDate);
 
 
   //check the frequency, date money should be deducted
@@ -153,6 +125,7 @@ app.get('/savings-tracker', (req, res)=>{
       targetAmount: targetAmount,
       amountSaved: amountSaved,
       interestEarned: interestEarned,
+      endDate: req.params.endDate
     
     });
 });

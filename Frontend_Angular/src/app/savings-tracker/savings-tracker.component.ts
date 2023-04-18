@@ -19,6 +19,7 @@ export class SavingsTrackerComponent implements OnInit {
       this.targetAmount = data.targetAmount; // Update targetAmount in the component
       this.amountSaved = data.amountSaved; // Update amountSaved in the component
       this.interestEarned = data.interestEarned;
+      this.endDate = data.endDate;
     });
   }
 
@@ -33,8 +34,10 @@ export class SavingsTrackerComponent implements OnInit {
     this.http.post('//localhost:3000/savings-tracker', {}).subscribe(response => {
       this.showPopup = false;
       setTimeout(()=>{
-        this.router.navigate(['/create-savings'])
-      }, 1000);
+        
+        this.router.navigateByUrl('/dashboard');
+      }, 3000);
+      this.router.navigate(['/create-savings']);
       
     }, error => {
       // Handle any error that occurs during the HTTP request
